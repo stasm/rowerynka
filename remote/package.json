@@ -1,0 +1,27 @@
+{
+  "name": "rowerynka",
+  "private": "true",
+  "version": "0.0.1",
+  "description": "Rowerynka",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stasm/rowerynka.git"
+  },
+  "author": "Staś Małolepszy <stas@duzodobrze.pl>",
+  "license": "AGPL-3.0",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "fluent": "^0.3.0",
+    "fluent-intl-polyfill": "0.0.1",
+    "geolib": "^2.0.22",
+    "node-fetch": "^1.6.3"
+  },
+  "devDependencies": {
+    "eslint": "^3.9.1",
+    "rollup": "^0.41.4"
+  },
+  "engines": {
+    "node": "^7.0.0"
+  }
+}
