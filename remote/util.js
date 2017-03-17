@@ -3,6 +3,10 @@
 import fetch from "node-fetch";
 import { getDistanceSimple } from "geolib";
 
+function err(error) {
+    return Object.assign(new Error, error);
+}
+
 export async function get(url) {
     const response = await fetch(url);
 
@@ -22,11 +26,20 @@ export async function post(url, body) {
         body: JSON.stringify(body)
     });
 
-    if (!response.ok) {
-        throw new Error(response.statusText);
+    if (response.ok) {
+        return response.json();
     }
 
-    return response.json();
+    console.error("--- Status ", response.status);
+
+    if (response.status === 400) {
+        const { error } = await response.json();
+        console.error(error);
+        throw err(error);
+    }
+
+    console.error(response.statusText);
+    throw new Error(response.statusText);
 }
 
 export function distance(origin, destination) {

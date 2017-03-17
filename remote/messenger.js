@@ -12,7 +12,7 @@ export async function send(message) {
     try {
         var { recipient_id, message_id } = await post(url, message);
     } catch (err) {
-        return console.error("Failed calling Send API", err.message);
+        return console.error("Sending failed: ", err.message);
     }
 
     return { recipient_id, message_id };
