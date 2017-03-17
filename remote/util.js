@@ -1,6 +1,6 @@
 // vim: ts=4 et sts=4 sw=4
 
-import fetch from "node-fetch";
+import fetch, { Headers } from "node-fetch";
 import { getDistanceSimple } from "geolib";
 
 function err(error) {
@@ -20,9 +20,9 @@ export async function get(url) {
 export async function post(url, body) {
     const response = await fetch(url, {
         method: "POST",
-        headers: {
+        headers: new Headers({
             "Content-Type": "application/json"
-        },
+        }),
         body: JSON.stringify(body)
     });
 
