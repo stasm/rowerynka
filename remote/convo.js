@@ -89,13 +89,13 @@ function to_element(origin, station) {
         key: PLACES_API_KEY,
         size: "500x500",
         maptype: "roadmap",
-        style: [
-            "feature:transit|visibility:off",
-            "feature:poi|visibility:off",
-            "feature:poi.park|visibility:on"
-        ],
+        style: "feature:poi.business|visibility:off",
         markers: dest
     };
+    const map_url =
+        `https://www.google.com/maps/dir/${orig}/${dest}` +
+        // Specify walking mode.
+        "/data=!4m2!4m1!3e2";
 
     return {
         title: station.name,
@@ -107,7 +107,7 @@ function to_element(origin, station) {
         buttons: [{
             type: "web_url",
             title: _("open-map"),
-            url: `https://www.google.com/maps/dir/${orig}/${dest}`,
+            url: map_url,
         }, {
             "type": "element_share"
         }]
