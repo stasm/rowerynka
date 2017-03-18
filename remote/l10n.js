@@ -6,9 +6,22 @@ import { MessageContext } from "fluent";
 const cx = new MessageContext("pl");
 cx.addMessages(`
 
+[[ Text responses ]]
+
 welcome-new-user =
     Witaj na pokładzie! Prześlij mi swoje położenie,
     a poszukam najbliższego wolnego roweru Veturilo.
+
+hello-user =
+    Cześć! Prześlij mi swoją lokalizację, a poszukam
+    najbliższego wolnego roweru Veturilo.
+
+help =
+    Jestem botem.  Szukam dostępnych rowerów Veturilo.  Użyj przycisku "Wyślij
+    lokalizację", żeby zobaczyć, jak działam.
+
+
+[[ Errors ]]
 
 unknown-message =
     Nie rozumiem.
@@ -30,6 +43,9 @@ no-stations-available =
 
 no-bikes-available =
     W pobliżu nie ma żadnych dostępnych rowerów.
+
+
+[[ Station listing ]]
 
 station-detail =
     { $bikes ->
@@ -59,6 +75,9 @@ acknowledgement-4 =
 
 acknowledgement-5 =
     Nie ma sprawy.
+
+acknowledgement-6 =
+    Nie ma za co.
 `);
 
 export default function _(id, args) {

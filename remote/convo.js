@@ -1,6 +1,7 @@
 // vim: ts=4 et sts=4 sw=4
 
 import { stringify } from "querystring";
+import { parse_text } from "./text";
 import { get_stations } from "./nextbike";
 import { send } from "./messenger";
 import { distance, random_int } from "./util";
@@ -38,7 +39,20 @@ async function received_message(event) {
     }
 
     if (message.text) {
-        return await send_text(sender_id, _("unknown-message"));
+        const command = parse_text(message.text);
+        switch (command) {
+            case "TEXT_THANKS":
+                const i = random_int(1, 5);
+                return await send_text(sender_id, _(`acknowledgement-${i}`));
+            case "TEXT_HELLO":
+                return await send_text(sender_id, _("hello-user"));
+            case "TEXT_HELP":
+                return await send_text(sender_id, _("help"));
+            case "TEXT_START":
+                return await send_text(sender_id, _("welcome-new-user"));
+            default:
+                return await send_text(sender_id, _("unknown-message"));
+        }
     }
 
     if (message.attachments) {
