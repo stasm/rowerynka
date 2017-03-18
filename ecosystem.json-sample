@@ -1,0 +1,29 @@
+{
+    "apps" : [
+        {
+            "name"        : "rowerynka",
+            "script"      : "index.js",
+            "watch"       : true,
+            "node_args"   : "--harmony",
+            "merge_logs"  : true,
+            "cwd"         : "dist/remote",
+            "env": {
+                "MESSENGER_API_URL": "https://graph.facebook.com/v2.6/me/messages",
+                "MESSENGER_APP_SECRET": "",
+                "MESSENGER_PAGE_ACCESS_TOKEN": "",
+                "MESSENGER_VALIDATION_TOKEN": "",
+
+                "NEXTBIKE_API_URL": "https://nextbike.net/maps/nextbike-live.xml",
+
+                "PLACES_API_URL": "https://maps.googleapis.com/maps/api/staticmap",
+                "PLACES_API_KEY": "",
+
+                "STATIC_URL": "",
+
+                "NODE_ENV": "production",
+                "PORT": 59001
+            }
+        }
+    ]
+}
+
