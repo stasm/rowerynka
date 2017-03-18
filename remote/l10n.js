@@ -19,6 +19,9 @@ unknown-attachment =
 unknown-postback =
     Nie rozumiem.
 
+no-stations-available =
+    W pobliżu nie ma żadnych stacji rowerów.
+
 no-bikes-available =
     W pobliżu nie ma żadnych dostępnych rowerów.
 

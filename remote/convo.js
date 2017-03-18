@@ -114,25 +114,26 @@ function to_element(origin, station) {
     };
 }
 
+function non_empty(station) {
+    return station.bikes > 0;
+}
 
 async function send_locations(recipient_id, origin) {
-    function non_empty(station) {
-        return station.bikes > 0;
-    }
-
-    function by_distance(a, b) {
-        return distance(origin, a) - distance(origin, b);
-    }
-
     await typing_on(recipient_id);
     const stations = await get_stations(origin, 2000);
-    const closest = stations.filter(non_empty).sort(by_distance).slice(0, 10);
-    const elements = closest.map(station => to_element(origin, station));
     await typing_off(recipient_id);
 
-    if (elements.length === 0) {
+    if (stations.length === 0) {
+        return send_text(recipient_id, _("no-stations-available"));
+    }
+
+    const with_bikes = stations.filter(non_empty).slice(0, 10);
+
+    if (with_bikes.length === 0) {
         return send_text(recipient_id, _("no-bikes-available"));
     }
+
+    const elements = with_bikes.map(station => to_element(origin, station));
 
     const message = {
         recipient: {

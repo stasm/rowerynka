@@ -12,7 +12,7 @@ build: $(PACKAGE)
 $(PACKAGE): $(SOURCES)
 	@mkdir -p $(PACKAGE)
 	@rollup $(CURDIR)/index.js \
-	    --external body-parser,crypto,express,fluent,fluent-intl-polyfill,geolib,node-fetch,querystring \
+	    --external body-parser,crypto,express,fluent,fluent-intl-polyfill,geolib,libxmljs,node-fetch,querystring \
 	    --format cjs \
 	    --output $@/index.js
 	@cp $(CURDIR)/package.json $(PACKAGE)

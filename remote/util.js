@@ -1,23 +1,25 @@
 // vim: ts=4 et sts=4 sw=4
 
 import fetch, { Headers } from "node-fetch";
+import { parseXmlString } from "libxmljs";
 import { getDistanceSimple } from "geolib";
 
 function err(error) {
     return Object.assign(new Error, error);
 }
 
-export async function get(url) {
+export async function get_xml(url) {
     const response = await fetch(url);
 
     if (!response.ok) {
         throw new Error(response.statusText);
     }
 
-    return response.json();
+    const xml = await response.text();
+    return parseXmlString(xml);
 }
 
-export async function post(url, body) {
+export async function post_json(url, body) {
     const response = await fetch(url, {
         method: "POST",
         headers: new Headers({
