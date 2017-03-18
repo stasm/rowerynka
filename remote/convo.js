@@ -3,7 +3,7 @@
 import { stringify } from "querystring";
 import { get_stations } from "./nextbike";
 import { send } from "./messenger";
-import { distance } from "./util";
+import { distance, random_int } from "./util";
 import _ from "./l10n";
 
 const { PLACES_API_URL, PLACES_API_KEY, STATIC_URL } = process.env;
@@ -25,6 +25,17 @@ async function received_message(event) {
 
     console.log(">>> Message");
     console.log(JSON.stringify(message));
+
+    if (message.quick_reply) {
+        const { payload } = message.quick_reply;
+        switch (payload) {
+            case "USER_THANKS":
+                const i = random_int(1, 5);
+                return await send_text(sender_id, _(`acknowledgement-${i}`));
+            default:
+                return await send_text(sender_id, _("unknown-quick-reply"));
+        }
+    }
 
     if (message.text) {
         return await send_text(sender_id, _("unknown-message"));
@@ -58,11 +69,12 @@ async function received_postback(event) {
     console.log(">>> Postback");
     console.log(JSON.stringify(payload));
 
-    if (payload === "USER_GET_STARTED") {
-        return await send_text(sender_id, _("welcome-new-user"));
+    switch (payload) {
+        case "USER_GET_STARTED":
+            return await send_text(sender_id, _("welcome-new-user"));
+        default:
+            return await send_text(sender_id, _("unknown-postback"));
     }
-
-    return await send_text(sender_id, _("unknown-postback"));
 }
 
 async function send_text(recipient_id, text) {
@@ -177,6 +189,10 @@ async function send_locations(recipient_id, origin) {
         message: {
             quick_replies: [
                 {
+                    "content_type": "text",
+                    "title": _("quick-reply-thanks"),
+                    "payload": "USER_THANKS"
+                }, {
                     "content_type": "location",
                 }
             ],

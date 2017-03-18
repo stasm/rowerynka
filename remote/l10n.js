@@ -19,6 +19,9 @@ unknown-attachment =
 unknown-postback =
     Nie rozumiem.
 
+unknown-quick-reply =
+    Nie rozumiem.
+
 generic-error =
     Ups, coś poszło nie tak. Spróbuj ponownie za chwilę.
 
@@ -38,6 +41,24 @@ station-detail =
 
 open-map =
     Pokaż trasę
+
+quick-reply-thanks =
+    Dzięki
+
+acknowledgement-1 =
+    Do usług.
+
+acknowledgement-2 =
+    Polecam się.
+
+acknowledgement-3 =
+    Spoko.
+
+acknowledgement-4 =
+    Żaden kłopot.
+
+acknowledgement-5 =
+    Nie ma sprawy.
 `);
 
 export default function _(id, args) {

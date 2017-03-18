@@ -47,3 +47,7 @@ export async function post_json(url, body) {
 export function distance(origin, destination) {
     return getDistanceSimple(origin, destination, 10);
 }
+
+export function random_int(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
