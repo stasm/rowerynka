@@ -17,7 +17,7 @@ export default async function handle_event(evt) {
         return received_postback(evt);
     }
 
-    console.log("--- Unknown event: ", evt);
+    console.error("--- Unknown event: ", evt);
 }
 
 async function received_message(event) {
@@ -120,8 +120,14 @@ function non_empty(station) {
 
 async function send_locations(recipient_id, origin) {
     await typing_on(recipient_id);
-    const stations = await get_stations(origin, 2000);
-    await typing_off(recipient_id);
+    try {
+        var stations = await get_stations(origin, 2000);
+    } catch (err) {
+        console.error("--- Error: ", err.message);
+        return send_text(recipient_id, _("generic-error"));
+    } finally {
+        await typing_off(recipient_id);
+    }
 
     if (stations.length === 0) {
         return send_text(recipient_id, _("no-stations-available"));

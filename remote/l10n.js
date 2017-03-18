@@ -19,6 +19,9 @@ unknown-attachment =
 unknown-postback =
     Nie rozumiem.
 
+generic-error =
+    Ups, coś poszło nie tak. Spróbuj ponownie za chwilę.
+
 no-stations-available =
     W pobliżu nie ma żadnych stacji rowerów.
 

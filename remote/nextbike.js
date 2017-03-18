@@ -14,13 +14,7 @@ export async function get_stations(origin, radius = 1000) {
     };
     const url = `${NEXTBIKE_API_URL}?${stringify(query)}`;
 
-    try {
-        var doc = await get_xml(url);
-    } catch (err) {
-        console.error(err.message);
-        return [];
-    }
-
+    const doc = await get_xml(url);
     const places = doc.find("//place");
     const stations = [];
 
