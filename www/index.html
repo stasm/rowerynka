@@ -2,7 +2,18 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
     <title>Rowerynka</title>
+
+    <meta property="og:title" content="Rowerynka" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://rowerynka.pl" />
+    <meta property="og:image" content="https://rowerynka.pl/share.jpg" />
+    <meta property="og:image:type" content="image/jpg" />
+    <meta property="og:description" content="Znajdź najbliższy dostępny rower Veturilo." />
+    <meta property="fb:app_id" content="1795284677456865" />
   </head>
   <body>
     <script>
@@ -18,7 +29,7 @@
          var js, fjs = d.getElementsByTagName(s)[0];
          if (d.getElementById(id)) {return;}
          js = d.createElement(s); js.id = id;
-         js.src = "//connect.facebook.net/pl/sdk.js";
+         js.src = "//connect.facebook.net/pl_PL/sdk.js";
          fjs.parentNode.insertBefore(js, fjs);
        }(document, 'script', 'facebook-jssdk'));
     </script>
@@ -33,16 +44,49 @@
       ga('send', 'pageview');
     </script>
 
-    <h1>Rowerynka</h1>
+    <main>
+      <section>
+        <div class="title">
+          <img class="title__logo" src="./logo-60.png">
+          <h1>Rowerynka</h1>
+        </div>
 
-    <div>
-      <div class="fb-messengermessageus" 
-        messenger_app_id='1795284677456865'
-        page_id='1878948282386638'
-        color="blue"
-        size="xlarge">
-      </div>
-    </div>
+        <p>
+          Powiedz Rowerynce, gdzie jesteś, i&nbsp;znajdź najbliższy dostępny rower Veturilo.
+        </p>
+
+        <div class="hint">
+          Nie musisz instalować Rowerynki.  Wystarczy, że&nbsp;napiszesz do&nbsp;niej wiadomość w&nbsp;aplikacji Facebook Messenger.
+        </div>
+
+        <div class="cta">
+          <div class="fb-messengermessageus"
+            messenger_app_id="1795284677456865"
+            page_id="1878948282386638"
+            color="blue"
+            size="xlarge">
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <img class="screenshot"
+          src="./screenshot-431w.png"
+          srcset="./screenshot-425w.png 425w,
+                  ./screenshot-849w.png 849w,
+                  ./screenshot-1274w.png 1274w,
+                  ./screenshot-1698w.png 1698w"
+          sizes="(max-width: 767px) 90vw,
+                 (max-width: 959px) 50vw,
+                 480px"
+        >
+      </section>
+    </main>
+
+    <footer>
+      <a class="navlink" href="/informacje">Informacje</a>
+      <a class="navlink" href="https://facebook.com/rowerynka">Facebook</a>
+    </footer>
 
   </body>
 </html>
