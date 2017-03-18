@@ -6,7 +6,7 @@ import { send } from "./messenger";
 import { distance } from "./util";
 import _ from "./l10n";
 
-const { PLACES_API_URL, PLACES_API_KEY } = process.env;
+const { PLACES_API_URL, PLACES_API_KEY, STATIC_URL } = process.env;
 
 export default async function handle_event(evt) {
     if (evt.message) {
@@ -32,16 +32,20 @@ async function received_message(event) {
 
     if (message.attachments) {
         const [attachment] = message.attachments;
-        if (attachment.type === "location") {
-            const { lat, long } = attachment.payload.coordinates;
-            const origin = {
-                latitude: lat,
-                longitude: long,
-            };
-            return send_locations(sender_id, origin);
+        switch (attachment.type) {
+            case "location": {
+                const { lat, long } = attachment.payload.coordinates;
+                const origin = {
+                    latitude: lat,
+                    longitude: long,
+                };
+                return send_locations(sender_id, origin);
+            }
+            case "image":
+                return send_gif(sender_id, "highfive.gif");
+            default:
+                return send_text(sender_id, _("unknown-attachment"));
         }
-
-        return send_text(sender_id, _("unknown-attachment"));
     }
 }
 
@@ -77,6 +81,31 @@ async function send_text(recipient_id, text) {
     };
 
     console.log("<<< Text");
+    console.log(JSON.stringify(message));
+    await send(message);
+}
+
+async function send_gif(recipient_id, filename) {
+    var message = {
+        recipient: {
+            id: recipient_id
+        },
+        message: {
+            attachment: {
+                type: "image",
+                payload: {
+                    url: `${STATIC_URL}/${filename}`
+                }
+            },
+            quick_replies: [
+                {
+                    "content_type": "location",
+                }
+            ],
+        }
+    };
+
+    console.log("<<< GIF");
     console.log(JSON.stringify(message));
     await send(message);
 }
