@@ -10,11 +10,11 @@ const { PLACES_API_URL, PLACES_API_KEY, STATIC_URL } = process.env;
 
 export default async function handle_event(evt) {
     if (evt.message) {
-        return received_message(evt);
+        return await received_message(evt);
     }
 
     if (evt.postback) {
-        return received_postback(evt);
+        return await received_postback(evt);
     }
 
     console.error("--- Unknown event: ", evt);
@@ -27,7 +27,7 @@ async function received_message(event) {
     console.log(JSON.stringify(message));
 
     if (message.text) {
-        return send_text(sender_id, _("unknown-message"));
+        return await send_text(sender_id, _("unknown-message"));
     }
 
     if (message.attachments) {
@@ -39,12 +39,12 @@ async function received_message(event) {
                     latitude: lat,
                     longitude: long,
                 };
-                return send_locations(sender_id, origin);
+                return await send_locations(sender_id, origin);
             }
             case "image":
-                return send_gif(sender_id, "highfive.gif");
+                return await send_gif(sender_id, "highfive.gif");
             default:
-                return send_text(sender_id, _("unknown-attachment"));
+                return await send_text(sender_id, _("unknown-attachment"));
         }
     }
 }
@@ -59,10 +59,10 @@ async function received_postback(event) {
     console.log(JSON.stringify(payload));
 
     if (payload === "USER_GET_STARTED") {
-        await send_text(sender_id, _("welcome-new-user"));
-    } else {
-        await send_text(sender_id, _("unknown-postback"));
+        return await send_text(sender_id, _("welcome-new-user"));
     }
+
+    return await send_text(sender_id, _("unknown-postback"));
 }
 
 async function send_text(recipient_id, text) {
@@ -82,7 +82,7 @@ async function send_text(recipient_id, text) {
 
     console.log("<<< Text");
     console.log(JSON.stringify(message));
-    await send(message);
+    return await send(message);
 }
 
 async function send_gif(recipient_id, filename) {
@@ -107,7 +107,7 @@ async function send_gif(recipient_id, filename) {
 
     console.log("<<< GIF");
     console.log(JSON.stringify(message));
-    await send(message);
+    return await send(message);
 }
 
 function to_element(origin, station) {
@@ -153,19 +153,19 @@ async function send_locations(recipient_id, origin) {
         var stations = await get_stations(origin, 2000);
     } catch (err) {
         console.error("--- Error: ", err.message);
-        return send_text(recipient_id, _("generic-error"));
+        return await send_text(recipient_id, _("generic-error"));
     } finally {
         await typing_off(recipient_id);
     }
 
     if (stations.length === 0) {
-        return send_text(recipient_id, _("no-stations-available"));
+        return await send_text(recipient_id, _("no-stations-available"));
     }
 
     const with_bikes = stations.filter(non_empty).slice(0, 10);
 
     if (with_bikes.length === 0) {
-        return send_text(recipient_id, _("no-bikes-available"));
+        return await send_text(recipient_id, _("no-bikes-available"));
     }
 
     const elements = with_bikes.map(station => to_element(origin, station));
@@ -193,7 +193,7 @@ async function send_locations(recipient_id, origin) {
 
     console.log("<<< Stations");
     console.log(JSON.stringify(message));
-    await send(message);
+    return await send(message);
 }
 
 async function typing_on(recipient_id) {
@@ -204,7 +204,7 @@ async function typing_on(recipient_id) {
         sender_action: "typing_on"
     };
 
-    await send(message);
+    return await send(message);
 }
 
 async function typing_off(recipient_id) {
@@ -215,5 +215,5 @@ async function typing_off(recipient_id) {
         sender_action: "typing_off"
     };
 
-    await send(message);
+    return await send(message);
 }
