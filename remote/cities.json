@@ -1,0 +1,184 @@
+[
+    {
+        "uid": "148",
+        "name": "Wrocław",
+        "bounds": [
+            {
+                "latitude": 51.048,
+                "longitude": 16.9605
+            },
+            {
+                "latitude": 51.136,
+                "longitude": 17.1429
+            }
+        ]
+    },
+    {
+        "uid": "192",
+        "name": "Poznań",
+        "bounds": [
+            {
+                "latitude": 52.3635,
+                "longitude": 16.8236
+            },
+            {
+                "latitude": 52.4677,
+                "longitude": 16.9786
+            }
+        ]
+    },
+    {
+        "uid": "394",
+        "name": "Stacje Sponsorskie Nextbike PRM",
+        "bounds": [
+            {
+                "latitude": 52.4159,
+                "longitude": 16.89
+            },
+            {
+                "latitude": 52.4159,
+                "longitude": 16.89
+            }
+        ]
+    },
+    {
+        "uid": "202",
+        "name": "Opole",
+        "bounds": [
+            {
+                "latitude": 50.6521,
+                "longitude": 17.8796
+            },
+            {
+                "latitude": 50.6816,
+                "longitude": 17.9712
+            }
+        ]
+    },
+    {
+        "uid": "210",
+        "name": "Warszawa",
+        "bounds": [
+            {
+                "latitude": 52.1311,
+                "longitude": 20.869
+            },
+            {
+                "latitude": 52.3485,
+                "longitude": 21.1201
+            }
+        ]
+    },
+    {
+        "uid": "372",
+        "name": "Stacje Sponsorskie Nextbike Veturilo",
+        "bounds": [
+            {
+                "latitude": 52.1561,
+                "longitude": 20.9292
+            },
+            {
+                "latitude": 52.3026,
+                "longitude": 21.0624
+            }
+        ]
+    },
+    {
+        "uid": "251",
+        "name": "Lublin",
+        "bounds": [
+            {
+                "latitude": 51.1898,
+                "longitude": 22.4805
+            },
+            {
+                "latitude": 51.2775,
+                "longitude": 22.6294
+            }
+        ]
+    },
+    {
+        "uid": "331",
+        "name": "Świdnik",
+        "bounds": [
+            {
+                "latitude": 51.2112,
+                "longitude": 22.693
+            },
+            {
+                "latitude": 51.2259,
+                "longitude": 22.7082
+            }
+        ]
+    },
+    {
+        "uid": "255",
+        "name": "Grodzisk Mazowiecki",
+        "bounds": [
+            {
+                "latitude": 52.0981,
+                "longitude": 20.6148
+            },
+            {
+                "latitude": 52.1177,
+                "longitude": 20.6404
+            }
+        ]
+    },
+    {
+        "uid": "342",
+        "name": "Katowice",
+        "bounds": [
+            {
+                "latitude": 50.2332,
+                "longitude": 18.9679
+            },
+            {
+                "latitude": 50.2842,
+                "longitude": 19.031
+            }
+        ]
+    },
+    {
+        "uid": "330",
+        "name": "Lódź",
+        "bounds": [
+            {
+                "latitude": 51.7022,
+                "longitude": 19.4141
+            },
+            {
+                "latitude": 51.8012,
+                "longitude": 19.5066
+            }
+        ]
+    },
+    {
+        "uid": "346",
+        "name": "Szczecin",
+        "bounds": [
+            {
+                "latitude": 53.3658,
+                "longitude": 14.4904
+            },
+            {
+                "latitude": 53.4545,
+                "longitude": 14.69
+            }
+        ]
+    },
+    {
+        "uid": "359",
+        "name": "Michałowice",
+        "bounds": [
+            {
+                "latitude": 52.1398,
+                "longitude": 20.7947
+            },
+            {
+                "latitude": 52.1812,
+                "longitude": 20.9046
+            }
+        ]
+    }
+]

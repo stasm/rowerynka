@@ -1,0 +1,22 @@
+{
+  "name": "rowerynka-scripts",
+  "private": "true",
+  "version": "0.0.1",
+  "description": "Scripts for Rowerynka",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stasm/rowerynka.git"
+  },
+  "author": "Staś Małolepszy <stas@duzodobrze.pl>",
+  "license": "AGPL-3.0",
+  "dependencies": {
+    "libxmljs": "^0.18.4",
+    "node-fetch": "^1.6.3"
+  },
+  "devDependencies": {
+    "eslint": "^3.9.1"
+  },
+  "engines": {
+    "node": "^7.0.0"
+  }
+}

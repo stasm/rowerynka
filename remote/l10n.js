@@ -10,15 +10,16 @@ cx.addMessages(`
 
 welcome-new-user =
     Witaj na pokładzie! Prześlij mi swoje położenie,
-    a poszukam najbliższego wolnego roweru Veturilo.
+    a poszukam najbliższego wolnego roweru miejskiego.
 
 hello-user =
     Cześć! Prześlij mi swoją lokalizację, a poszukam
-    najbliższego wolnego roweru Veturilo.
+    najbliższego wolnego roweru miejskiego.
 
 help =
-    Jestem botem.  Szukam dostępnych rowerów Veturilo.  Użyj przycisku "Wyślij
-    lokalizację", żeby zobaczyć, jak działam.
+    Jestem botem.  Szukam dostępnych rowerów miejskich.
+    Użyj przycisku "Wyślij lokalizację", żeby zobaczyć,
+    jak działam.
 
 
 [[ Errors ]]

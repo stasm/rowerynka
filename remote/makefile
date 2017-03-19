@@ -16,6 +16,7 @@ $(PACKAGE): $(SOURCES)
 	    --format cjs \
 	    --output $@/index.js
 	@cp $(CURDIR)/package.json $(PACKAGE)
+	@cp $(CURDIR)/cities.json $(PACKAGE)
 	@echo -e " $(OK) $@ built"
 
 clean:
@@ -24,14 +25,6 @@ clean:
 
 lint:
 	@eslint --max-warnings 0 $(SOURCES)
-	@echo -e " $(OK) $@"
-
-deps:
-	@npm install
-	@echo -e " $(OK) $@ installed"
-
-depsclean:
-	@rm -rf node_modules
 	@echo -e " $(OK) $@"
 
 OK := \033[32;01m✓\033[0m
