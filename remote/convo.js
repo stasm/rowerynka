@@ -1,13 +1,13 @@
 // vim: ts=4 et sts=4 sw=4
 
-import { stringify } from "querystring";
 import { parse_text } from "./text";
 import { get_stations } from "./nextbike";
 import { send } from "./messenger";
+import { map_image_url, map_dirs_url } from "./google";
 import { distance, random_int } from "./util";
 import _ from "./l10n";
 
-const { PLACES_API_URL, PLACES_API_KEY, STATIC_URL } = process.env;
+const { STATIC_URL } = process.env;
 
 export default async function handle_event(evt) {
     if (evt.message) {
@@ -140,29 +140,17 @@ function to_element(origin, station) {
     const orig = `${origin.latitude},${origin.longitude}`;
     const dest = `${station.latitude},${station.longitude}`;
 
-    const image_query = {
-        key: PLACES_API_KEY,
-        size: "500x500",
-        maptype: "roadmap",
-        style: "feature:poi.business|visibility:off",
-        markers: dest
-    };
-    const map_url =
-        `https://www.google.com/maps/dir/${orig}/${dest}` +
-        // Specify walking mode.
-        "/data=!4m2!4m1!3e2";
-
     return {
         title: station.name,
         subtitle: _("station-detail", {
             bikes: station.bikes,
             distance: distance(origin, station, 10)
         }),
-        image_url: `${PLACES_API_URL}?${stringify(image_query)}`,
+        image_url: map_image_url(dest),
         buttons: [{
             type: "web_url",
             title: _("open-map"),
-            url: map_url,
+            url: map_dirs_url(orig, dest)
         }, {
             "type": "element_share"
         }]
