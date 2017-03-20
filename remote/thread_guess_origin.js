@@ -1,9 +1,9 @@
 // vim: ts=4 et sts=4 sw=4
 
-import { parse_text } from "./text";
 import { send_text, send_confirm, send_locations } from "./actions";
 import { place_autocomplete, place_detail } from "./google";
 import { set_state, get_state, del_state } from "./state";
+import patterns from "./patterns";
 import _ from "./l10n";
 
 export async function start(user_id, message) {
@@ -35,7 +35,7 @@ const stages = {
         const [prediction] = await place_autocomplete(message.text);
 
         if (!prediction) {
-            return await end(user_id, _("thread-guess-try-again"));
+            return await end(user_id, _("thread-guess-no-prediction"));
         }
 
         const { place_id, description } = prediction;
@@ -66,17 +66,21 @@ const stages = {
         }
 
         if (message.text) {
-            const command = parse_text(message.text);
-            switch (command) {
-                case "TEXT_YES":
-                    return await goto("STAGE_BOT_SEARCH", user_id);
-                case "TEXT_NO":
-                    return await end(user_id, _("thread-guess-try-again"));
-                case "TEXT_CANCEL":
-                    return await end(user_id, _("thread-guess-nevermind"));
-                default:
-                    return await send_confirm(user_id, _("thread-unknown"));
+            const { text } = message;
+
+            if (patterns.yes.test(text)) {
+                return await goto("STAGE_BOT_SEARCH", user_id);
             }
+
+            if (patterns.no.test(text)) {
+                return await end(user_id, _("thread-guess-try-again"));
+            }
+
+            if (patterns.cancel.test(text)) {
+                return await end(user_id, _("thread-guess-nevermind"));
+            }
+
+            return await send_confirm(user_id, _("thread-unknown"));
         }
 
         return await send_confirm(user_id, _("thread-unknown"));

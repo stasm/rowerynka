@@ -1,10 +1,10 @@
 // vim: ts=4 et sts=4 sw=4
 
-import { parse_text } from "./text";
 import { get_thread } from "./threads";
 import { del_state } from "./state";
 import { send_text, send_random_gif, send_locations } from "./actions";
 import { random_int } from "./util";
+import patterns from "./patterns";
 import _ from "./l10n";
 
 export async function handle_event(event) {
@@ -42,21 +42,27 @@ async function received_message(user_id, message) {
     }
 
     if (message.text) {
-        const command = parse_text(message.text);
-        switch (command) {
-            case "TEXT_THANKS":
-                const i = random_int(1, 5);
-                return await send_text(user_id, _(`acknowledgement-${i}`));
-            case "TEXT_HELLO":
-                return await send_text(user_id, _("hello-user"));
-            case "TEXT_HELP":
-                return await send_text(user_id, _("help"));
-            case "TEXT_START":
-                return await send_text(user_id, _("welcome-new-user"));
-            default:
-                const thread = get_thread("GUESS_ORIGIN");
-                return await thread.start(user_id, message);
+        const { text } = message;
+
+        if (patterns.thanks.test(text)) {
+            const i = random_int(1, 5);
+            return await send_text(user_id, _(`acknowledgement-${i}`));
         }
+
+        if (patterns.hello.test(text)) {
+            return await send_text(user_id, _("hello-user"));
+        }
+
+        if (patterns.help.test(text)) {
+            return await send_text(user_id, _("help"));
+        }
+
+        if (patterns.start.test(text)) {
+            return await send_text(user_id, _("welcome-new-user"));
+        }
+
+        const thread = get_thread("GUESS_ORIGIN");
+        return await thread.start(user_id, message);
     }
 
     if (message.attachments) {

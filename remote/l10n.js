@@ -59,6 +59,9 @@ thread-unknown =
 thread-guess-confirm =
     Czy chodziło Ci o { $place }?
 
+thread-guess-no-prediction =
+    Hmm, nie rozumiem. Spróbuj podać dokładny adres.
+
 thread-guess-try-again =
     Spróbuj podać bardziej dokładny adres.
 
