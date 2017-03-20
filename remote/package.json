@@ -16,7 +16,8 @@
     "fluent-intl-polyfill": "0.0.1",
     "geolib": "^2.0.22",
     "libxmljs": "^0.18.4",
-    "node-fetch": "^1.6.3"
+    "node-fetch": "^1.6.3",
+    "redis": "^2.7.1"
   },
   "devDependencies": {
     "eslint": "^3.9.1",

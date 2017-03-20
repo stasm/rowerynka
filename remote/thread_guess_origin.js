@@ -83,7 +83,7 @@ const stages = {
     },
 
     STAGE_BOT_SEARCH: async function(user_id) {
-        const { place_id } = get_state(user_id);
+        const { place_id } = await get_state(user_id);
         const detail = await place_detail(place_id);
 
         if (!detail) {

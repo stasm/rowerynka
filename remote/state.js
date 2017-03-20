@@ -1,21 +1,17 @@
 // vim: ts=4 et sts=4 sw=4
 
-const STATE = new Map();
+import { create_client, hmset, hgetall, del } from "./redis";
 
-export function set_state(user_id, state) {
-    const prev = STATE.get(user_id);
+const client = create_client();
 
-    if (!prev) {
-        return STATE.set(user_id, state);
-    }
-
-    return STATE.set(user_id, Object.assign(prev, state));
+export async function set_state(user_id, state) {
+    return await hmset(client, user_id, state);
 }
 
-export function get_state(user_id) {
-    return STATE.get(user_id);
+export async function get_state(user_id) {
+    return await hgetall(client, user_id);
 }
 
-export function del_state(user_id) {
-    return STATE.delete(user_id);
+export async function del_state(user_id) {
+    return await del(client, user_id);
 }

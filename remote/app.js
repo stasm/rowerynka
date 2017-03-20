@@ -46,7 +46,7 @@ function webhook_post(req, res) {
 
 async function handle_event(event) {
     const { sender: { id: sender_id } } = event;
-    const current_state = get_state(sender_id);
+    const current_state = await get_state(sender_id);
     const active_thread = current_state
         ? get_thread(current_state.thread_id)
         : get_thread("THREAD_DEFAULT");
