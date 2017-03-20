@@ -4,10 +4,9 @@ import { parse_text } from "./text";
 import { get_stations } from "./nextbike";
 import { send } from "./messenger";
 import { map_image_url, map_dirs_url, guess_origin } from "./google";
+import { random_gif } from "./giphy";
 import { distance, random_int } from "./util";
 import _ from "./l10n";
-
-const { STATIC_URL } = process.env;
 
 export default async function handle_event(evt) {
     if (evt.message) {
@@ -74,7 +73,7 @@ async function received_message(event) {
                 return await send_locations(sender_id, origin);
             }
             case "image":
-                return await send_gif(sender_id, "highfive.gif");
+                return await send_random_gif(sender_id);
             default:
                 return await send_text(sender_id, _("unknown-attachment"));
         }
@@ -118,8 +117,9 @@ async function send_text(recipient_id, text) {
     return await send(message);
 }
 
-async function send_gif(recipient_id, filename) {
-    var message = {
+async function send_random_gif(recipient_id) {
+    const url = await random_gif();
+    const message = {
         recipient: {
             id: recipient_id
         },
@@ -127,7 +127,7 @@ async function send_gif(recipient_id, filename) {
             attachment: {
                 type: "image",
                 payload: {
-                    url: `${STATIC_URL}/${filename}`
+                    url
                 }
             },
             quick_replies: [

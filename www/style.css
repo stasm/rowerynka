@@ -78,3 +78,7 @@ a:hover {
     text-decoration: none;
     color: #00f;
 }
+
+p img, li img {
+    vertical-align: bottom;
+}
