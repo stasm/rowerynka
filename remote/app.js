@@ -3,7 +3,7 @@
 import body_parser from "body-parser";
 import crypto from "crypto";
 import express from "express";
-import handle_event from "./convo";
+import handle_event from "./receive";
 
 const { MESSENGER_APP_SECRET, MESSENGER_VALIDATION_TOKEN } = process.env;
 

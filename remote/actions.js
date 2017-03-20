@@ -1,103 +1,13 @@
 // vim: ts=4 et sts=4 sw=4
 
-import { parse_text } from "./text";
 import { get_stations } from "./nextbike";
 import { send } from "./messenger";
-import { map_image_url, map_dirs_url, guess_origin } from "./google";
+import { map_image_url, map_dirs_url } from "./google";
 import { random_gif } from "./giphy";
-import { distance, random_int } from "./util";
+import { distance } from "./util";
 import _ from "./l10n";
 
-export default async function handle_event(evt) {
-    if (evt.message) {
-        return await received_message(evt);
-    }
-
-    if (evt.postback) {
-        return await received_postback(evt);
-    }
-
-    console.error("--- Unknown event: ", evt);
-}
-
-async function received_message(event) {
-    const { sender: { id: sender_id }, message } = event;
-
-    console.log(">>> Message");
-    console.log(JSON.stringify(message));
-
-    if (message.quick_reply) {
-        const { payload } = message.quick_reply;
-        switch (payload) {
-            case "USER_THANKS":
-                const i = random_int(1, 5);
-                return await send_text(sender_id, _(`acknowledgement-${i}`));
-            default:
-                return await send_text(sender_id, _("unknown-quick-reply"));
-        }
-    }
-
-    if (message.text) {
-        const command = parse_text(message.text);
-        switch (command) {
-            case "TEXT_THANKS":
-                const i = random_int(1, 5);
-                return await send_text(sender_id, _(`acknowledgement-${i}`));
-            case "TEXT_HELLO":
-                return await send_text(sender_id, _("hello-user"));
-            case "TEXT_HELP":
-                return await send_text(sender_id, _("help"));
-            case "TEXT_START":
-                return await send_text(sender_id, _("welcome-new-user"));
-            default: {
-                const origin = await guess_origin(message.text);
-
-                if (origin) {
-                    return await send_locations(sender_id, origin);
-                }
-
-                return await send_text(sender_id, _("unknown-message"));
-            }
-        }
-    }
-
-    if (message.attachments) {
-        const [attachment] = message.attachments;
-        switch (attachment.type) {
-            case "location": {
-                const { lat, long } = attachment.payload.coordinates;
-                const origin = {
-                    latitude: lat,
-                    longitude: long,
-                };
-                return await send_locations(sender_id, origin);
-            }
-            case "image":
-                return await send_random_gif(sender_id);
-            default:
-                return await send_text(sender_id, _("unknown-attachment"));
-        }
-    }
-}
-
-async function received_postback(event) {
-    const {
-        sender: { id: sender_id },
-        postback: { payload }
-    } = event;
-
-    console.log(">>> Postback");
-    console.log(JSON.stringify(payload));
-
-    switch (payload) {
-        case "USER_GET_STARTED":
-            return await send_text(sender_id, _("welcome-new-user"));
-        default:
-            return await send_text(sender_id, _("unknown-postback"));
-    }
-}
-
-async function send_text(recipient_id, text) {
+export async function send_text(recipient_id, text) {
     const message = {
         recipient: {
             id: recipient_id
@@ -117,7 +27,7 @@ async function send_text(recipient_id, text) {
     return await send(message);
 }
 
-async function send_random_gif(recipient_id) {
+export async function send_random_gif(recipient_id) {
     const url = await random_gif();
     const message = {
         recipient: {
@@ -168,7 +78,7 @@ function non_empty(station) {
     return station.bikes > 0;
 }
 
-async function send_locations(recipient_id, origin) {
+export async function send_locations(recipient_id, origin) {
     await typing_on(recipient_id);
     try {
         var stations = await get_stations(origin, 2000);
