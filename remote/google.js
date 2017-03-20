@@ -27,7 +27,6 @@ export function map_dirs_url(orig, dest) {
 
 async function place_autocomplete(input) {
     const query = {
-        types: "geocode",
         key: MAPS_API_KEY,
         language: "pl",
         input
