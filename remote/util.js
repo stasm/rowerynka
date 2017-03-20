@@ -19,6 +19,16 @@ export async function get_xml(url) {
     return parseXmlString(xml);
 }
 
+export async function get_json(url) {
+    const response = await fetch(url);
+
+    if (!response.ok) {
+        throw new Error(response.statusText);
+    }
+
+    return await response.json();
+}
+
 export async function post_json(url, body) {
     const response = await fetch(url, {
         method: "POST",

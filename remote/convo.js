@@ -3,7 +3,7 @@
 import { parse_text } from "./text";
 import { get_stations } from "./nextbike";
 import { send } from "./messenger";
-import { map_image_url, map_dirs_url } from "./google";
+import { map_image_url, map_dirs_url, guess_origin } from "./google";
 import { distance, random_int } from "./util";
 import _ from "./l10n";
 
@@ -50,8 +50,15 @@ async function received_message(event) {
                 return await send_text(sender_id, _("help"));
             case "TEXT_START":
                 return await send_text(sender_id, _("welcome-new-user"));
-            default:
+            default: {
+                const origin = await guess_origin(message.text);
+
+                if (origin) {
+                    return await send_locations(sender_id, origin);
+                }
+
                 return await send_text(sender_id, _("unknown-message"));
+            }
         }
     }
 

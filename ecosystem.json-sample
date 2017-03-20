@@ -15,8 +15,9 @@
 
                 "NEXTBIKE_API_URL": "https://nextbike.net/maps/nextbike-live.xml",
 
-                "PLACES_API_URL": "https://maps.googleapis.com/maps/api/staticmap",
-                "PLACES_API_KEY": "",
+                "MAPS_API_KEY": "",
+                "MAPS_STATIC_URL": "https://maps.googleapis.com/maps/api/staticmap",
+                "MAPS_PLACES_URL": "https://maps.googleapis.com/maps/api/place",
 
                 "STATIC_URL": "",
 
