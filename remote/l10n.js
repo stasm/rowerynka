@@ -47,6 +47,25 @@ no-bikes-available =
     W pobliżu nie ma żadnych dostępnych rowerów.
 
 
+[[ Threads ]]
+
+thread-yes = Tak
+thread-no = Nie
+thread-cancel = Nieważne
+
+thread-unknown =
+    Nie rozumiem.
+
+thread-guess-confirm =
+    Czy chodziło Ci o { $place }?
+
+thread-guess-try-again =
+    Spróbuj podać bardziej dokładny adres.
+
+thread-guess-nevermind =
+    OK, nieważne.
+
+
 [[ Station listing ]]
 
 station-detail =

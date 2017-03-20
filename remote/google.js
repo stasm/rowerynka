@@ -25,7 +25,7 @@ export function map_dirs_url(orig, dest) {
     );
 }
 
-async function place_autocomplete(input) {
+export async function place_autocomplete(input) {
     const query = {
         key: MAPS_API_KEY,
         language: "pl",
@@ -37,7 +37,7 @@ async function place_autocomplete(input) {
     return predictions;
 }
 
-async function place_detail(place_id) {
+export async function place_detail(place_id) {
     const query = {
         key: MAPS_API_KEY,
         language: "pl",
@@ -47,26 +47,4 @@ async function place_detail(place_id) {
     const url = `${MAPS_PLACES_URL}/details/json`;
     const { result } = await get_json(url, query);
     return result;
-}
-
-export async function guess_origin(input) {
-    const predictions = await place_autocomplete(input);
-
-    if (predictions.length === 0) {
-        return null;
-    }
-
-    const [first] = predictions;
-    const detail = await place_detail(first.place_id);
-
-    if (!detail) {
-        return null;
-    }
-
-    const { geometry: { location } } = detail;
-
-    return {
-        latitude: location.lat,
-        longitude: location.lng,
-    };
 }

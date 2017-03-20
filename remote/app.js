@@ -3,7 +3,9 @@
 import body_parser from "body-parser";
 import crypto from "crypto";
 import express from "express";
-import handle_event from "./receive";
+
+import { get_state } from "./state";
+import { get_thread } from "./threads";
 
 const { MESSENGER_APP_SECRET, MESSENGER_VALIDATION_TOKEN } = process.env;
 
@@ -40,6 +42,16 @@ function webhook_post(req, res) {
     }
 
     res.sendStatus(200);
+}
+
+async function handle_event(event) {
+    const { sender: { id: sender_id } } = event;
+    const current_state = get_state(sender_id);
+    const active_thread = current_state
+        ? get_thread(current_state.thread_id)
+        : get_thread("THREAD_DEFAULT");
+
+    return await active_thread.handle_event(event, current_state);
 }
 
 function verify_request(req, res, buf) {

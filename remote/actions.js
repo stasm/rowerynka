@@ -27,6 +27,44 @@ export async function send_text(recipient_id, text) {
     return await send(message);
 }
 
+export async function send_question(recipient_id, text, quick_replies) {
+    const message = {
+        recipient: {
+            id: recipient_id
+        },
+        message: {
+            text,
+            quick_replies
+        }
+    };
+
+    console.log("<<< Question");
+    console.log(JSON.stringify(message));
+    return await send(message);
+}
+
+export async function send_confirm(recipient_id, text) {
+    const quick_replies = [
+        {
+            content_type: "text",
+            title: _("thread-yes"),
+            payload: "USER_YES"
+        },
+        {
+            content_type: "text",
+            title: _("thread-no"),
+            payload: "USER_NO"
+        },
+        {
+            content_type: "text",
+            title: _("thread-cancel"),
+            payload: "USER_CANCEL"
+        }
+    ];
+
+    return await send_question(recipient_id, text, quick_replies);
+}
+
 export async function send_random_gif(recipient_id) {
     const url = await random_gif();
     const message = {
