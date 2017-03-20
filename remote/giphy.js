@@ -15,8 +15,6 @@ export async function random_gif() {
     const { meta, data } = await get_json(url, query);
 
     return meta.status === 200
-        // ? data.fixed_width_small_url
-        // ? data.image_url
         ? data.fixed_height_small_url
         : `${STATIC_URL}/highfive.gif`;
 }
