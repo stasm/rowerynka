@@ -3,11 +3,11 @@
 import { stringify } from "querystring";
 import { get_json } from "./util";
 
-const { MAPS_STATIC_URL, MAPS_PLACES_URL, PLACES_API_KEY } = process.env;
+const { MAPS_STATIC_URL, MAPS_PLACES_URL, MAPS_API_KEY } = process.env;
 
 export function map_image_url(dest) {
     const query = {
-        key: PLACES_API_KEY,
+        key: MAPS_API_KEY,
         size: "500x500",
         maptype: "roadmap",
         style: "feature:poi.business|visibility:off",
@@ -27,8 +27,8 @@ export function map_dirs_url(orig, dest) {
 
 async function place_autocomplete(input) {
     const query = {
-        key: PLACES_API_KEY,
         types: "geocode",
+        key: MAPS_API_KEY,
         language: "pl",
         input
     };
@@ -40,7 +40,7 @@ async function place_autocomplete(input) {
 
 async function place_detail(place_id) {
     const query = {
-        key: PLACES_API_KEY,
+        key: MAPS_API_KEY,
         language: "pl",
         placeid: place_id
     };
