@@ -1,5 +1,6 @@
 // vim: ts=4 et sts=4 sw=4
 
+import { stringify } from "querystring";
 import fetch, { Headers } from "node-fetch";
 import { parseXmlString } from "libxmljs";
 import { getDistanceSimple, getBoundsOfDistance } from "geolib";
@@ -8,8 +9,9 @@ function err(error) {
     return Object.assign(new Error, error);
 }
 
-export async function get_xml(url) {
-    const response = await fetch(url);
+export async function get_xml(url, query) {
+    const query_url = `${url}?${stringify(query)}`;
+    const response = await fetch(query_url);
 
     if (!response.ok) {
         throw new Error(response.statusText);
@@ -19,8 +21,9 @@ export async function get_xml(url) {
     return parseXmlString(xml);
 }
 
-export async function get_json(url) {
-    const response = await fetch(url);
+export async function get_json(url, query) {
+    const query_url = `${url}?${stringify(query)}`;
+    const response = await fetch(query_url);
 
     if (!response.ok) {
         throw new Error(response.statusText);
@@ -29,8 +32,9 @@ export async function get_json(url) {
     return await response.json();
 }
 
-export async function post_json(url, body) {
-    const response = await fetch(url, {
+export async function post_json(url, query, body) {
+    const query_url = `${url}?${stringify(query)}`;
+    const response = await fetch(query_url, {
         method: "POST",
         headers: new Headers({
             "Content-Type": "application/json"

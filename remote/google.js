@@ -33,8 +33,8 @@ async function place_autocomplete(input) {
         input
     };
 
-    const url = `${MAPS_PLACES_URL}/autocomplete/json?${stringify(query)}`;
-    const { predictions } = await get_json(url);
+    const url = `${MAPS_PLACES_URL}/autocomplete/json`;
+    const { predictions } = await get_json(url, query);
     return predictions;
 }
 
@@ -44,8 +44,9 @@ async function place_detail(place_id) {
         language: "pl",
         placeid: place_id
     };
-    const url = `${MAPS_PLACES_URL}/details/json?${stringify(query)}`;
-    const { result } = await get_json(url);
+
+    const url = `${MAPS_PLACES_URL}/details/json`;
+    const { result } = await get_json(url, query);
     return result;
 }
 

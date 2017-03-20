@@ -1,6 +1,5 @@
 // vim: ts=4 et sts=4 sw=4
 
-import { stringify } from "querystring";
 import { get_xml, distance, bounds, bounds_intersect } from "./util";
 
 const CITIES = require("./cities.json");
@@ -44,9 +43,8 @@ async function get_places_in_city(city_id) {
     const query = {
         city: city_id
     };
-    const url = `${NEXTBIKE_API_URL}?${stringify(query)}`;
 
-    const doc = await get_xml(url);
+    const doc = await get_xml(NEXTBIKE_API_URL, query);
     return doc.find("//place");
 }
 
