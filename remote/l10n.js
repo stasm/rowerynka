@@ -3,23 +3,24 @@
 import "fluent-intl-polyfill";
 import { MessageContext } from "fluent";
 
+const re_newlines = /\r?\n|\r/g;
+
 const cx = new MessageContext("pl");
 cx.addMessages(`
 
 [[ Text responses ]]
 
 welcome-new-user =
-    Witaj na pokładzie! Prześlij mi swoje położenie,
-    a poszukam najbliższego wolnego roweru miejskiego.
+    Witaj na pokładzie! Aby znaleźć najbliższy wolny rower miejski, wciśnij
+    guzik "Wyślij lokalizację".
 
 hello-user =
-    Cześć! Prześlij mi swoją lokalizację, a poszukam
-    najbliższego wolnego roweru miejskiego.
+    Cześć! Aby znaleźć najbliższy wolny rower miejski, wciśnij guzik "Wyślij
+    lokalizację".
 
 help =
-    Jestem botem.  Szukam dostępnych rowerów miejskich.
-    Użyj przycisku "Wyślij lokalizację", żeby zobaczyć,
-    jak działam.
+    Użyj przycisku "Wyślij lokalizację", żeby rozpocząć szukanie dostępnego
+    roweru miejskiego.
 
 
 [[ Errors ]]
@@ -88,5 +89,5 @@ export default function _(id, args) {
         return id;
     }
 
-    return cx.format(msg, args).replace("\n", " ");
+    return cx.format(msg, args).replace(re_newlines, " ");
 }
