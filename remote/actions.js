@@ -131,7 +131,7 @@ export async function send_locations(recipient_id, origin) {
         return await send_text(recipient_id, _("no-stations-available"));
     }
 
-    const with_bikes = stations.filter(non_empty).slice(0, 10);
+    const with_bikes = stations.filter(non_empty).slice(0, 3);
 
     if (with_bikes.length === 0) {
         return await send_text(recipient_id, _("no-bikes-available"));
