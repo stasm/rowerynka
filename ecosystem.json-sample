@@ -19,6 +19,9 @@
                 "MAPS_STATIC_URL": "https://maps.googleapis.com/maps/api/staticmap",
                 "MAPS_PLACES_URL": "https://maps.googleapis.com/maps/api/place",
 
+                "AUTOCOMPLETE_LOCATION": "0,0",
+                "AUTOCOMPLETE_RADIUS": 20000000,
+
                 "GIPHY_API_URL": "http://api.giphy.com/v1/gifs",
                 "GIPHY_API_KEY": "",
 

@@ -3,7 +3,10 @@
 import { stringify } from "querystring";
 import { get_json } from "./util";
 
-const { MAPS_STATIC_URL, MAPS_PLACES_URL, MAPS_API_KEY } = process.env;
+const {
+    MAPS_STATIC_URL, MAPS_PLACES_URL, MAPS_API_KEY,
+    AUTOCOMPLETE_LOCATION, AUTOCOMPLETE_RADIUS
+} = process.env;
 
 export function map_image_url(dest) {
     const query = {
@@ -28,6 +31,9 @@ export function map_dirs_url(orig, dest) {
 export async function place_autocomplete(input) {
     const query = {
         key: MAPS_API_KEY,
+        location: AUTOCOMPLETE_LOCATION,
+        radius: AUTOCOMPLETE_RADIUS,
+        strictbounds: 1,
         language: "pl",
         input
     };
