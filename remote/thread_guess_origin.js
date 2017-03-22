@@ -8,7 +8,16 @@ import _ from "./l10n";
 
 export async function start(user_id, message) {
     await set_state(user_id, { thread_id: "GUESS_ORIGIN", });
-    return await goto("STAGE_BOT_PREDICT", user_id, message);
+
+    const [prediction] = await place_autocomplete(message.text);
+
+    if (!prediction) {
+        return await end(user_id, _("thread-guess-no-prediction"));
+    }
+
+    const { place_id, description } = prediction;
+    await set_state(user_id, { place_id, description });
+    return await goto("STAGE_BOT_ASK_CONFIRM", user_id);
 }
 
 export async function handle_event(event, state) {
@@ -31,20 +40,9 @@ export async function handle_event(event, state) {
 }
 
 const stages = {
-    STAGE_BOT_PREDICT: async function(user_id, message) {
-        const [prediction] = await place_autocomplete(message.text);
-
-        if (!prediction) {
-            return await end(user_id, _("thread-guess-no-prediction"));
-        }
-
-        const { place_id, description } = prediction;
-
-        await set_state(user_id, {
-            stage_id: "STAGE_USER_RESPOND",
-            place_id
-        });
-
+    STAGE_BOT_ASK_CONFIRM: async function(user_id) {
+        const { description } = await get_state(user_id);
+        await next("STAGE_USER_RESPOND", user_id);
         return await send_confirm(
             user_id, _("thread-guess-confirm", { place: description })
         );
@@ -61,7 +59,7 @@ const stages = {
                 case "USER_CANCEL":
                     return await end(user_id, _("thread-guess-nevermind"));
                 default:
-                    return await send_confirm(user_id, _("thread-unknown"));
+                    return await goto("STAGE_BOT_ASK_CONFIRM", user_id);
             }
         }
 
@@ -80,7 +78,7 @@ const stages = {
                 return await end(user_id, _("thread-guess-nevermind"));
             }
 
-            return await send_confirm(user_id, _("thread-unknown"));
+            return await goto("STAGE_BOT_ASK_CONFIRM", user_id);
         }
 
         return await send_confirm(user_id, _("thread-unknown"));
@@ -105,6 +103,10 @@ const stages = {
         return await send_locations(user_id, origin);
     }
 };
+
+async function next(stage_id, user_id) {
+    await set_state(user_id, { stage_id });
+}
 
 async function goto(stage_id, user_id, message) {
     await set_state(user_id, { stage_id });
