@@ -113,8 +113,8 @@ menu-help =
     — spróbuję znaleźć pasujący adres.
 
 menu-coverage =
-    Obecnie działam w Warszawie, Łodzi, Wrocławiu, Poznaniu, Szczecinie, Opolu,
-    Grodzisku Mazowieckim i Michałowicach.
+    Obecnie działam w Warszawie, Łodzi, Wrocławiu, Poznaniu, Szczecinie,
+    Lublinie, Opolu, Świdniku, Grodzisku Mazowieckim i Michałowicach.
 
 `);
 
