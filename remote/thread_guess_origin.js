@@ -13,14 +13,13 @@ export async function start(user_id, message) {
 
 export async function handle_event(event, state) {
     const { sender: { id: user_id } } = event;
-    const { stage_id } = state;
 
     if (event.message) {
         const { message } = event;
         console.log(">>> Message");
         console.log(JSON.stringify(message));
 
-        return await handle_message(stage_id, user_id, message);
+        return await handle_message(user_id, state, message);
     }
 
     if (event.postback) {
@@ -30,7 +29,8 @@ export async function handle_event(event, state) {
     console.error("--- Unknown event: ", event);
 }
 
-async function handle_message(stage_id, user_id, message) {
+async function handle_message(user_id, state, message) {
+    const { stage_id } = state;
     switch (stage_id) {
         case "BOT_PREDICTING":
         case "BOT_SEARCHING":
@@ -45,8 +45,12 @@ async function handle_message(stage_id, user_id, message) {
                         return await end(user_id, _("thread-guess-try-again"));
                     case "USER_CANCEL":
                         return await end(user_id, _("thread-guess-nevermind"));
-                    default:
-                        return await goto("USER_RESPOND", user_id);
+                    default: {
+                        const { description } = state;
+                        return await goto(
+                            "USER_RESPOND", user_id, description
+                        );
+                    }
                 }
             }
 
@@ -65,7 +69,8 @@ async function handle_message(stage_id, user_id, message) {
                     return await end(user_id, _("thread-guess-nevermind"));
                 }
 
-                return await goto("USER_RESPOND", user_id);
+                const { description } = state;
+                return await goto("USER_RESPOND", user_id, description);
             }
 
             return await send_confirm(user_id, _("thread-unknown"));
@@ -85,10 +90,9 @@ const transitions = {
 
         const { place_id, description } = prediction;
         await set_state(user_id, { place_id, description });
-        return await goto("USER_RESPOND", user_id);
+        return await goto("USER_RESPOND", user_id, description);
     },
-    USER_RESPOND: async function(user_id) {
-        const { description } = await get_state(user_id);
+    USER_RESPOND: async function(user_id, description) {
         return await send_confirm(
             user_id, _("thread-guess-confirm", { place: description })
         );
