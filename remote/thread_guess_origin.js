@@ -8,16 +8,7 @@ import _ from "./l10n";
 
 export async function start(user_id, message) {
     await set_state(user_id, { thread_id: "GUESS_ORIGIN", });
-
-    const [prediction] = await place_autocomplete(message.text);
-
-    if (!prediction) {
-        return await end(user_id, _("thread-guess-no-prediction"));
-    }
-
-    const { place_id, description } = prediction;
-    await set_state(user_id, { place_id, description });
-    return await goto("STAGE_BOT_ASK_CONFIRM", user_id);
+    return await goto("BOT_PREDICTING", user_id, message.text);
 }
 
 export async function handle_event(event, state) {
@@ -29,7 +20,7 @@ export async function handle_event(event, state) {
         console.log(">>> Message");
         console.log(JSON.stringify(message));
 
-        return await goto(stage_id, user_id, message);
+        return await handle_message(stage_id, user_id, message);
     }
 
     if (event.postback) {
@@ -39,52 +30,70 @@ export async function handle_event(event, state) {
     console.error("--- Unknown event: ", event);
 }
 
-const stages = {
-    STAGE_BOT_ASK_CONFIRM: async function(user_id) {
+async function handle_message(stage_id, user_id, message) {
+    switch (stage_id) {
+        case "BOT_PREDICTING":
+        case "BOT_SEARCHING":
+            return;
+        case "USER_RESPOND": {
+            if (message.quick_reply) {
+                const { payload } = message.quick_reply;
+                switch (payload) {
+                    case "USER_YES":
+                        return await goto("BOT_SEARCHING", user_id);
+                    case "USER_NO":
+                        return await end(user_id, _("thread-guess-try-again"));
+                    case "USER_CANCEL":
+                        return await end(user_id, _("thread-guess-nevermind"));
+                    default:
+                        return await goto("USER_RESPOND", user_id);
+                }
+            }
+
+            if (message.text) {
+                const { text } = message;
+
+                if (patterns.yes.test(text)) {
+                    return await goto("BOT_SEARCHING", user_id);
+                }
+
+                if (patterns.no.test(text)) {
+                    return await end(user_id, _("thread-guess-try-again"));
+                }
+
+                if (patterns.cancel.test(text)) {
+                    return await end(user_id, _("thread-guess-nevermind"));
+                }
+
+                return await goto("USER_RESPOND", user_id);
+            }
+
+            return await send_confirm(user_id, _("thread-unknown"));
+        }
+        default:
+            return await send_confirm(user_id, _("thread-unknown"));
+    }
+}
+
+const transitions = {
+    BOT_PREDICTING: async function(user_id, text) {
+        const [prediction] = await place_autocomplete(text);
+
+        if (!prediction) {
+            return await end(user_id, _("thread-guess-no-prediction"));
+        }
+
+        const { place_id, description } = prediction;
+        await set_state(user_id, { place_id, description });
+        return await goto("USER_RESPOND", user_id);
+    },
+    USER_RESPOND: async function(user_id) {
         const { description } = await get_state(user_id);
-        await next("STAGE_USER_RESPOND", user_id);
         return await send_confirm(
             user_id, _("thread-guess-confirm", { place: description })
         );
     },
-
-    STAGE_USER_RESPOND: async function(user_id, message) {
-        if (message.quick_reply) {
-            const { payload } = message.quick_reply;
-            switch (payload) {
-                case "USER_YES":
-                    return await goto("STAGE_BOT_SEARCH", user_id);
-                case "USER_NO":
-                    return await end(user_id, _("thread-guess-try-again"));
-                case "USER_CANCEL":
-                    return await end(user_id, _("thread-guess-nevermind"));
-                default:
-                    return await goto("STAGE_BOT_ASK_CONFIRM", user_id);
-            }
-        }
-
-        if (message.text) {
-            const { text } = message;
-
-            if (patterns.yes.test(text)) {
-                return await goto("STAGE_BOT_SEARCH", user_id);
-            }
-
-            if (patterns.no.test(text)) {
-                return await end(user_id, _("thread-guess-try-again"));
-            }
-
-            if (patterns.cancel.test(text)) {
-                return await end(user_id, _("thread-guess-nevermind"));
-            }
-
-            return await goto("STAGE_BOT_ASK_CONFIRM", user_id);
-        }
-
-        return await send_confirm(user_id, _("thread-unknown"));
-    },
-
-    STAGE_BOT_SEARCH: async function(user_id) {
+    BOT_SEARCHING: async function(user_id) {
         const { place_id } = await get_state(user_id);
         const detail = await place_detail(place_id);
 
@@ -101,19 +110,15 @@ const stages = {
 
         await del_state(user_id);
         return await send_locations(user_id, origin);
-    }
+    },
 };
 
-async function next(stage_id, user_id) {
+async function goto(stage_id, user_id, ...args) {
     await set_state(user_id, { stage_id });
-}
-
-async function goto(stage_id, user_id, message) {
-    await set_state(user_id, { stage_id });
-    const fn = stages[stage_id];
+    const fn = transitions[stage_id];
 
     if (fn) {
-        return await fn(user_id, message);
+        return await fn(user_id, ...args);
     }
 
     return await send_text(user_id, _("generic-error"));
