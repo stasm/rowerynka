@@ -8,7 +8,7 @@ export async function random_gif() {
     const query = {
         api_key: GIPHY_API_KEY,
         rating: "g",
-        tag: "high+five"
+        tag: "high five"
     };
 
     const url = `${GIPHY_API_URL}/random`;
