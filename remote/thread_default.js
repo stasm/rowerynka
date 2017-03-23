@@ -93,6 +93,10 @@ async function received_postback(user_id, postback) {
             // the convesation and start over.  Delete any previous state.
             await del_state(user_id);
             return await send_text(user_id, _("welcome-new-user"));
+        case "MENU_HELP":
+            return await send_text(user_id, _("menu-help"));
+        case "MENU_COVERAGE":
+            return await send_text(user_id, _("menu-coverage"));
         default:
             return await send_text(user_id, _("unknown-postback"));
     }

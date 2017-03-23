@@ -19,8 +19,9 @@ hello-user =
     lokalizację".
 
 help =
-    Użyj przycisku "Wyślij lokalizację", żeby rozpocząć szukanie dostępnego
-    roweru miejskiego.
+    Użyj przycisku "Wyślij lokalizację", żeby rozpocząć szukanie rowerów
+    miejskich w Twojej okolicy. Możesz też wpisać nazwę ulicy lub miejsca
+    — spróbuję znaleźć pasujący adres.
 
 
 [[ Errors ]]
@@ -102,6 +103,19 @@ acknowledgement-5 =
 
 acknowledgement-6 =
     Nie ma za co.
+
+
+[[ Persistent Menu ]]
+
+menu-help =
+    Użyj przycisku "Wyślij lokalizację", żeby rozpocząć szukanie rowerów
+    miejskich w Twojej okolicy. Możesz też wpisać nazwę ulicy lub miejsca
+    — spróbuję znaleźć pasujący adres.
+
+menu-coverage =
+    Obecnie działam w Warszawie, Łodzi, Wrocławiu, Poznaniu, Szczecinie, Opolu,
+    Grodzisku Mazowieckim i Michałowicach.
+
 `);
 
 export default function _(id, args) {
