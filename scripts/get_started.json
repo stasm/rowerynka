@@ -1,0 +1,5 @@
+{
+    "get_started": { 
+        "payload": "USER_GET_STARTED"
+    }
+}
