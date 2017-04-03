@@ -58,7 +58,11 @@ thread-unknown =
     Nie rozumiem.
 
 thread-guess-confirm =
-    Czy chodziło Ci o { $place }?
+    { $gender ->
+        [male] Czy miałeś na myśli { $place }?
+        [female] Czy miałaś na myśli { $place }?
+       *[other] Czy chodziło Ci o { $place }?
+    }
 
 thread-guess-no-prediction =
     Hmm, nie rozumiem. Spróbuj podać dokładny adres.

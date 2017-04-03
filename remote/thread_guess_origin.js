@@ -1,6 +1,7 @@
 // vim: ts=4 et sts=4 sw=4
 
 import { send_text, send_confirm, send_locations } from "./actions";
+import { get_user_profile } from "./messenger";
 import { place_autocomplete, place_detail } from "./google";
 import { set_state, get_state, del_state } from "./state";
 import patterns from "./patterns";
@@ -92,9 +93,10 @@ const transitions = {
         await set_state(user_id, { place_id, description });
         return await goto("USER_RESPOND", user_id, description);
     },
-    USER_RESPOND: async function(user_id, description) {
+    USER_RESPOND: async function(user_id, place) {
+        const { gender } = await get_user_profile(user_id);
         return await send_confirm(
-            user_id, _("thread-guess-confirm", { place: description })
+            user_id, _("thread-guess-confirm", { gender, place })
         );
     },
     BOT_SEARCHING: async function(user_id) {
