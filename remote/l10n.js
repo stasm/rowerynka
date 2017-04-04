@@ -118,7 +118,8 @@ menu-help =
 
 menu-coverage =
     Obecnie działam w Warszawie, Łodzi, Wrocławiu, Poznaniu, Szczecinie,
-    Lublinie, Opolu, Świdniku, Grodzisku Mazowieckim i Michałowicach.
+    Lublinie, Katowicach, Białymstoku, Radomiu, Gliwicach, Opolu, Świdniku,
+    Grodzisku Mazowieckim i Michałowicach.
 
 `);
 

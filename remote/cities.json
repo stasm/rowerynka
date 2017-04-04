@@ -65,7 +65,7 @@
             },
             {
                 "latitude": 52.3485,
-                "longitude": 21.1201
+                "longitude": 21.1202
             }
         ]
     },
@@ -78,8 +78,22 @@
                 "longitude": 20.9292
             },
             {
-                "latitude": 52.3026,
+                "latitude": 52.3132,
                 "longitude": 21.0624
+            }
+        ]
+    },
+    {
+        "uid": "245",
+        "name": "Białystok",
+        "bounds": [
+            {
+                "latitude": 53.0891,
+                "longitude": 22.9855
+            },
+            {
+                "latitude": 53.1615,
+                "longitude": 23.2285
             }
         ]
     },
@@ -93,7 +107,7 @@
             },
             {
                 "latitude": 51.2775,
-                "longitude": 22.6294
+                "longitude": 22.6993
             }
         ]
     },
@@ -140,6 +154,20 @@
         ]
     },
     {
+        "uid": "400",
+        "name": "Radom",
+        "bounds": [
+            {
+                "latitude": 51.3631,
+                "longitude": 21.1085
+            },
+            {
+                "latitude": 51.4297,
+                "longitude": 21.1803
+            }
+        ]
+    },
+    {
         "uid": "330",
         "name": "Lódź",
         "bounds": [
@@ -148,8 +176,8 @@
                 "longitude": 19.4141
             },
             {
-                "latitude": 51.8012,
-                "longitude": 19.5066
+                "latitude": 51.8013,
+                "longitude": 19.5178
             }
         ]
     },
@@ -176,8 +204,22 @@
                 "longitude": 20.7947
             },
             {
-                "latitude": 52.1812,
+                "latitude": 52.1906,
                 "longitude": 20.9046
+            }
+        ]
+    },
+    {
+        "uid": "393",
+        "name": "Gliwice",
+        "bounds": [
+            {
+                "latitude": 50.2772,
+                "longitude": 18.6531
+            },
+            {
+                "latitude": 50.3235,
+                "longitude": 18.6929
             }
         ]
     }
