@@ -60,12 +60,12 @@
         "name": "Warszawa",
         "bounds": [
             {
-                "latitude": 52.1311,
-                "longitude": 20.869
+                "latitude": 52.1002,
+                "longitude": 20.6276
             },
             {
                 "latitude": 52.3485,
-                "longitude": 21.1202
+                "longitude": 21.1201
             }
         ]
     },
@@ -78,7 +78,7 @@
                 "longitude": 20.9292
             },
             {
-                "latitude": 52.3132,
+                "latitude": 52.3026,
                 "longitude": 21.0624
             }
         ]
@@ -92,7 +92,7 @@
                 "longitude": 22.9855
             },
             {
-                "latitude": 53.1615,
+                "latitude": 53.1614,
                 "longitude": 23.2285
             }
         ]
@@ -107,7 +107,7 @@
             },
             {
                 "latitude": 51.2775,
-                "longitude": 22.6993
+                "longitude": 22.6294
             }
         ]
     },
@@ -176,8 +176,8 @@
                 "longitude": 19.4141
             },
             {
-                "latitude": 51.8013,
-                "longitude": 19.5178
+                "latitude": 51.8012,
+                "longitude": 19.5066
             }
         ]
     },
@@ -204,7 +204,7 @@
                 "longitude": 20.7947
             },
             {
-                "latitude": 52.1906,
+                "latitude": 52.1812,
                 "longitude": 20.9046
             }
         ]
@@ -214,7 +214,7 @@
         "name": "Gliwice",
         "bounds": [
             {
-                "latitude": 50.2772,
+                "latitude": 50.281,
                 "longitude": 18.6531
             },
             {
