@@ -5,7 +5,10 @@ import { create_client, hmset, hgetall, del } from "./redis";
 const client = create_client();
 
 export async function set_state(user_id, state) {
-    return await hmset(client, user_id, state);
+    const obj = Object.assign(state, {
+        last_ts: (new Date()).toString()
+    });
+    return await hmset(client, user_id, obj);
 }
 
 export async function get_state(user_id) {
