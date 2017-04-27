@@ -17,6 +17,7 @@ export async function send_text(recipient_id, text) {
             quick_replies: [
                 {
                     "content_type": "location",
+                    "title": _("send-location"),
                 }
             ],
         }
@@ -81,6 +82,7 @@ export async function send_random_gif(recipient_id) {
             quick_replies: [
                 {
                     "content_type": "location",
+                    "title": _("send-location"),
                 }
             ],
         }
@@ -151,6 +153,7 @@ export async function send_locations(recipient_id, origin) {
                     "payload": "USER_THANKS"
                 }, {
                     "content_type": "location",
+                    "title": _("send-location"),
                 }
             ],
             attachment: {

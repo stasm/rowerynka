@@ -24,6 +24,11 @@ help =
     — spróbuję znaleźć pasujący adres.
 
 
+[[ Quick replies ]]
+
+send-location = Wyślij lokalizację
+
+
 [[ Errors ]]
 
 unknown-message =
