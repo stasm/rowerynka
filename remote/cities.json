@@ -23,7 +23,7 @@
             },
             {
                 "latitude": 52.4677,
-                "longitude": 16.9786
+                "longitude": 16.9796
             }
         ]
     },
@@ -60,8 +60,8 @@
         "name": "Warszawa",
         "bounds": [
             {
-                "latitude": 52.1002,
-                "longitude": 20.6276
+                "latitude": 52.1311,
+                "longitude": 20.869
             },
             {
                 "latitude": 52.3485,
@@ -98,6 +98,20 @@
         ]
     },
     {
+        "uid": "247",
+        "name": "Konstancin Jeziorna",
+        "bounds": [
+            {
+                "latitude": 52.0774,
+                "longitude": 21.1007
+            },
+            {
+                "latitude": 52.103,
+                "longitude": 21.1344
+            }
+        ]
+    },
+    {
         "uid": "251",
         "name": "Lublin",
         "bounds": [
@@ -107,7 +121,7 @@
             },
             {
                 "latitude": 51.2775,
-                "longitude": 22.6294
+                "longitude": 22.6988
             }
         ]
     },
@@ -117,10 +131,10 @@
         "bounds": [
             {
                 "latitude": 51.2112,
-                "longitude": 22.693
+                "longitude": 22.5609
             },
             {
-                "latitude": 51.2259,
+                "latitude": 51.2604,
                 "longitude": 22.7082
             }
         ]
@@ -144,12 +158,12 @@
         "name": "Katowice",
         "bounds": [
             {
-                "latitude": 50.2332,
-                "longitude": 18.9679
+                "latitude": 50.2049,
+                "longitude": 18.9585
             },
             {
                 "latitude": 50.2842,
-                "longitude": 19.031
+                "longitude": 19.0561
             }
         ]
     },
@@ -164,6 +178,20 @@
             {
                 "latitude": 51.4297,
                 "longitude": 21.1803
+            }
+        ]
+    },
+    {
+        "uid": "401",
+        "name": "Stacje Sponsorskie Radom",
+        "bounds": [
+            {
+                "latitude": 51.3786,
+                "longitude": 21.1279
+            },
+            {
+                "latitude": 51.3786,
+                "longitude": 21.1279
             }
         ]
     },
@@ -210,6 +238,20 @@
         ]
     },
     {
+        "uid": "363",
+        "name": "Legnica",
+        "bounds": [
+            {
+                "latitude": 51.1995,
+                "longitude": 16.1518
+            },
+            {
+                "latitude": 51.2128,
+                "longitude": 16.2138
+            }
+        ]
+    },
+    {
         "uid": "393",
         "name": "Gliwice",
         "bounds": [
@@ -220,6 +262,62 @@
             {
                 "latitude": 50.3235,
                 "longitude": 18.6929
+            }
+        ]
+    },
+    {
+        "uid": "339",
+        "name": "Stalowa Wola",
+        "bounds": [
+            {
+                "latitude": 50.5399,
+                "longitude": 22.0466
+            },
+            {
+                "latitude": 50.5918,
+                "longitude": 22.0796
+            }
+        ]
+    },
+    {
+        "uid": "412",
+        "name": "Zgierz",
+        "bounds": [
+            {
+                "latitude": 51.8546,
+                "longitude": 19.3857
+            },
+            {
+                "latitude": 51.8812,
+                "longitude": 19.4256
+            }
+        ]
+    },
+    {
+        "uid": "411",
+        "name": "Pszczyna",
+        "bounds": [
+            {
+                "latitude": 49.9661,
+                "longitude": 18.889
+            },
+            {
+                "latitude": 49.9777,
+                "longitude": 18.9528
+            }
+        ]
+    },
+    {
+        "uid": "413",
+        "name": "Tychy",
+        "bounds": [
+            {
+                "latitude": 50.0931,
+                "longitude": 18.9661
+            },
+            {
+                "latitude": 50.1361,
+                "longitude": 19.0005
             }
         ]
     }
