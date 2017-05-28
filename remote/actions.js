@@ -116,6 +116,20 @@ function non_empty(station) {
     return station.bikes > 0;
 }
 
+function min_bikes_offset(stations, min_bikes) {
+    let tally = 0;
+
+    for (const [index, station] of stations.entries()) {
+        tally += station.bikes;
+
+        if (tally >= min_bikes) {
+            return index + 1;
+        }
+    }
+
+    return stations.length;
+}
+
 export async function send_locations(recipient_id, origin) {
     await typing_on(recipient_id);
     try {
@@ -131,13 +145,21 @@ export async function send_locations(recipient_id, origin) {
         return await send_text(recipient_id, _("no-stations-available"));
     }
 
-    const with_bikes = stations.filter(non_empty).slice(0, 3);
+    // Start with stations with at least one bike.
+    const with_bikes = stations.filter(non_empty);
 
     if (with_bikes.length === 0) {
         return await send_text(recipient_id, _("no-bikes-available"));
     }
 
-    const elements = with_bikes.map(station => to_element(origin, station));
+    // Messenger's Generic Templates can show up to 10 elements.
+    const closest_stations = with_bikes.slice(0, 10);
+    // Maybe we don't need all 10 stations to show a helpful number of bikes?
+    const offset = min_bikes_offset(closest_stations, 10);
+    // Still, show at least 3 stations.
+    const best_stations = closest_stations.slice(0, Math.max(3, offset));
+
+    const elements = best_stations.map(station => to_element(origin, station));
 
     const message = {
         recipient: {
