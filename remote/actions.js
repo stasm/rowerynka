@@ -108,8 +108,6 @@ function to_element(origin, station) {
             type: "web_url",
             title: _("open-map"),
             url: map_dirs_url(orig, dest)
-        }, {
-            "type": "element_share"
         }]
     };
 }
