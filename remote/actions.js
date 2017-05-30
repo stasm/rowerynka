@@ -106,7 +106,7 @@ function to_element(origin, station) {
             bikes,
             distance: distance(origin, station, 10)
         }),
-        image_url: map_image_url(dest, bikes.toString(10)),
+        image_url: map_image_url(dest, orig, bikes.toString(10)),
         buttons: [{
             type: "web_url",
             title: _("open-map"),
