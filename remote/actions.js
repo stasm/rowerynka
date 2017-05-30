@@ -2,7 +2,8 @@
 
 import { get_stations } from "./nextbike";
 import { send } from "./messenger";
-import { map_image_url, map_dirs_url } from "./google";
+import { map_dirs_url } from "./google";
+import { map_image_url } from "./bing";
 import { random_gif } from "./giphy";
 import { distance } from "./util";
 import _ from "./l10n";
@@ -97,13 +98,15 @@ function to_element(origin, station) {
     const orig = `${origin.latitude},${origin.longitude}`;
     const dest = `${station.latitude},${station.longitude}`;
 
+    const { name, bikes = 0 } = station;
+
     return {
-        title: station.name,
+        title: name,
         subtitle: _("station-detail", {
-            bikes: station.bikes,
+            bikes,
             distance: distance(origin, station, 10)
         }),
-        image_url: map_image_url(dest),
+        image_url: map_image_url(dest, bikes.toString(10)),
         buttons: [{
             type: "web_url",
             title: _("open-map"),

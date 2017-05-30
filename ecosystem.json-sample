@@ -19,6 +19,9 @@
                 "MAPS_STATIC_URL": "https://maps.googleapis.com/maps/api/staticmap",
                 "MAPS_PLACES_URL": "https://maps.googleapis.com/maps/api/place",
 
+                "BING_API_KEY": "",
+                "BING_STATIC_URL": "https://dev.virtualearth.net/REST/v1/Imagery/Map",
+
                 "AUTOCOMPLETE_LOCATION": "0,0",
                 "AUTOCOMPLETE_RADIUS": 20000000,
 
