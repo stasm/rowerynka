@@ -23,7 +23,7 @@
             },
             {
                 "latitude": 52.4677,
-                "longitude": 16.9796
+                "longitude": 16.9786
             }
         ]
     },
@@ -32,8 +32,8 @@
         "name": "Stacje Sponsorskie Nextbike PRM",
         "bounds": [
             {
-                "latitude": 52.4159,
-                "longitude": 16.89
+                "latitude": 52.3535,
+                "longitude": 16.8887
             },
             {
                 "latitude": 52.4159,
@@ -46,7 +46,7 @@
         "name": "Opole",
         "bounds": [
             {
-                "latitude": 50.6521,
+                "latitude": 50.6545,
                 "longitude": 17.8796
             },
             {
@@ -60,7 +60,7 @@
         "name": "Warszawa",
         "bounds": [
             {
-                "latitude": 52.1311,
+                "latitude": 52.1173,
                 "longitude": 20.869
             },
             {
@@ -78,8 +78,8 @@
                 "longitude": 20.9292
             },
             {
-                "latitude": 52.3026,
-                "longitude": 21.0624
+                "latitude": 52.3203,
+                "longitude": 21.0626
             }
         ]
     },
@@ -107,7 +107,7 @@
             },
             {
                 "latitude": 52.103,
-                "longitude": 21.1344
+                "longitude": 21.1235
             }
         ]
     },
@@ -120,8 +120,8 @@
                 "longitude": 22.4805
             },
             {
-                "latitude": 51.2775,
-                "longitude": 22.6988
+                "latitude": 51.2821,
+                "longitude": 22.6294
             }
         ]
     },
@@ -131,10 +131,10 @@
         "bounds": [
             {
                 "latitude": 51.2112,
-                "longitude": 22.5609
+                "longitude": 22.693
             },
             {
-                "latitude": 51.2604,
+                "latitude": 51.2259,
                 "longitude": 22.7082
             }
         ]
@@ -158,12 +158,12 @@
         "name": "Katowice",
         "bounds": [
             {
-                "latitude": 50.2049,
+                "latitude": 50.1959,
                 "longitude": 18.9585
             },
             {
                 "latitude": 50.2842,
-                "longitude": 19.0561
+                "longitude": 19.095
             }
         ]
     },
@@ -186,8 +186,8 @@
         "name": "Stacje Sponsorskie Radom",
         "bounds": [
             {
-                "latitude": 51.3786,
-                "longitude": 21.1279
+                "latitude": 51.3595,
+                "longitude": 21.1205
             },
             {
                 "latitude": 51.3786,
@@ -201,11 +201,11 @@
         "bounds": [
             {
                 "latitude": 51.7022,
-                "longitude": 19.4141
+                "longitude": 19.3845
             },
             {
-                "latitude": 51.8012,
-                "longitude": 19.5066
+                "latitude": 51.8226,
+                "longitude": 19.5428
             }
         ]
     },
@@ -215,10 +215,10 @@
         "bounds": [
             {
                 "latitude": 53.3658,
-                "longitude": 14.4904
+                "longitude": 14.4916
             },
             {
-                "latitude": 53.4545,
+                "latitude": 53.4595,
                 "longitude": 14.69
             }
         ]
@@ -266,58 +266,72 @@
         ]
     },
     {
-        "uid": "339",
-        "name": "Stalowa Wola",
+        "uid": "450",
+        "name": "Częstochowa",
         "bounds": [
             {
-                "latitude": 50.5399,
-                "longitude": 22.0466
+                "latitude": 50.8216,
+                "longitude": 19.1152
             },
             {
-                "latitude": 50.5918,
-                "longitude": 22.0796
+                "latitude": 50.8313,
+                "longitude": 19.1505
             }
         ]
     },
     {
-        "uid": "412",
-        "name": "Zgierz",
+        "uid": "422",
+        "name": "Kołobrzeg",
         "bounds": [
             {
-                "latitude": 51.8546,
-                "longitude": 19.3857
+                "latitude": 54.1567,
+                "longitude": 15.5426
             },
             {
-                "latitude": 51.8812,
-                "longitude": 19.4256
+                "latitude": 54.1927,
+                "longitude": 15.6627
             }
         ]
     },
     {
-        "uid": "411",
-        "name": "Pszczyna",
+        "uid": "431",
+        "name": "Kalisz",
         "bounds": [
             {
-                "latitude": 49.9661,
-                "longitude": 18.889
+                "latitude": 51.7432,
+                "longitude": 18.0537
             },
             {
-                "latitude": 49.9777,
-                "longitude": 18.9528
+                "latitude": 51.77,
+                "longitude": 18.1022
             }
         ]
     },
     {
-        "uid": "413",
-        "name": "Tychy",
+        "uid": "446",
+        "name": "Szamotuły",
         "bounds": [
             {
-                "latitude": 50.0931,
-                "longitude": 18.9661
+                "latitude": 52.6031,
+                "longitude": 16.5732
             },
             {
-                "latitude": 50.1361,
-                "longitude": 19.0005
+                "latitude": 52.6225,
+                "longitude": 16.5925
+            }
+        ]
+    },
+    {
+        "uid": "452",
+        "name": "Ostrów Wielkopolski",
+        "bounds": [
+            {
+                "latitude": 51.6411,
+                "longitude": 17.8066
+            },
+            {
+                "latitude": 51.6488,
+                "longitude": 17.8213
             }
         ]
     }

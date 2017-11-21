@@ -10,7 +10,7 @@
   "author": "Staś Małolepszy <stas@duzodobrze.pl>",
   "license": "AGPL-3.0",
   "dependencies": {
-    "libxmljs": "^0.18.4",
+    "libxmljs": "^0.18.7",
     "node-fetch": "^1.6.3"
   },
   "devDependencies": {

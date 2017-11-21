@@ -122,9 +122,11 @@ menu-help =
     — spróbuję znaleźć pasujący adres.
 
 menu-coverage =
-    Obecnie działam w Warszawie, Łodzi, Wrocławiu, Poznaniu, Szczecinie,
-    Lublinie, Katowicach, Białymstoku, Radomiu, Gliwicach, Opolu, Świdniku,
-    Grodzisku Mazowieckim i Michałowicach.
+    Obecnie działam we Wrocławiu, Poznaniu, Opolu, Warszawie, Białymstoku,
+    Konstancinie Jeziornie, Lublinie, Świdniku, Grodzisku Mazowieckim,
+    Katowicach, Radomiu, Łodzi, Szczecinie, Michałowicach, Legnicy,
+    Gliwicach, Częstochowie, Kołobrzegu, Kaliszu, Szamotułach i Ostrowie
+    Wielkopolskim.
 
 `);
 
