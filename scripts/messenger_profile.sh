@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [[ -z "${PAGE_ACCESS_TOKEN}" ]]; then
+    echo "PAGE_ACCESS_TOKEN is not defined."
+    exit 1
+fi
+
 if [[ ! $1 ]]; then
     echo "Path to the JSON file required."
     exit 1
