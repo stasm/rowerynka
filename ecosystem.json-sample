@@ -4,7 +4,6 @@
             "name"        : "rowerynka",
             "script"      : "index.js",
             "watch"       : true,
-            "node_args"   : "--harmony",
             "merge_logs"  : true,
             "cwd"         : "dist/remote",
             "env": {
@@ -36,4 +35,3 @@
         }
     ]
 }
-
