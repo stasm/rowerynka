@@ -1,11 +1,11 @@
 // vim: ts=4 et sts=4 sw=4
 
 import "fluent-intl-polyfill";
-import { MessageContext } from "fluent";
+import fluent from "fluent";
 
 const re_newlines = /\r?\n|\r/g;
 
-const cx = new MessageContext("pl");
+const cx = new fluent.MessageContext("pl");
 cx.addMessages(`
 
 [[ Text responses ]]

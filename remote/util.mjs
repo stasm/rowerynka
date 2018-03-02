@@ -1,9 +1,15 @@
 // vim: ts=4 et sts=4 sw=4
 
-import { stringify } from "querystring";
-import fetch, { Headers } from "node-fetch";
-import { parseXmlString } from "libxmljs";
-import { getDistanceSimple, getBoundsOfDistance } from "geolib";
+import fs from "fs";
+import util from "util";
+
+import querystring from "querystring";
+import fetch from "node-fetch";
+import libxmljs from "libxmljs";
+import geolib from "geolib";
+
+const read_file = util.promisify(fs.readFile);
+const { stringify } = querystring;
 
 function err(error) {
     return Object.assign(new Error, error);
@@ -18,7 +24,11 @@ export async function get_xml(url, query) {
     }
 
     const xml = await response.text();
-    return parseXmlString(xml);
+    return libxmljs.parseXmlString(xml);
+}
+
+export async function read_json(path, encoding = "utf8") {
+    return JSON.parse(await read_file(path, {encoding}));
 }
 
 export async function get_json(url, query) {
@@ -36,7 +46,7 @@ export async function post_json(url, query, body) {
     const query_url = `${url}?${stringify(query)}`;
     const response = await fetch(query_url, {
         method: "POST",
-        headers: new Headers({
+        headers: new fetch.Headers({
             "Content-Type": "application/json"
         }),
         body: JSON.stringify(body)
@@ -59,11 +69,11 @@ export async function post_json(url, query, body) {
 }
 
 export function distance(origin, destination) {
-    return getDistanceSimple(origin, destination, 10);
+    return geolib.getDistanceSimple(origin, destination, 10);
 }
 
 export function bounds(point, radius) {
-    return getBoundsOfDistance(point, radius);
+    return geolib.getBoundsOfDistance(point, radius);
 }
 
 export function bounds_intersect(bounds1, bounds2) {

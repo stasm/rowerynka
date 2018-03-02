@@ -1,14 +1,16 @@
 // vim: ts=4 et sts=4 sw=4
 
-import { get_xml, distance, bounds, bounds_intersect } from "./util";
+import {
+    read_json, get_xml, distance, bounds, bounds_intersect
+} from "./util";
 
-const CITIES = require("./cities.json");
 const { NEXTBIKE_API_URL } = process.env;
 const distances = new WeakMap();
 
 export async function get_stations(origin, radius = 1000) {
     const origin_bounds = bounds(origin, radius);
-    const city_ids = CITIES.filter(
+    const cities = await read_json("./cities.json");
+    const city_ids = cities.filter(
         city => bounds_intersect(origin_bounds, city.bounds)
     ).map(
         city => city.uid

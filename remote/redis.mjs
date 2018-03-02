@@ -1,9 +1,9 @@
 // vim: ts=4 et sts=4 sw=4
 
-import { createClient } from "redis";
+import redis from "redis";
 
 export function create_client() {
-    return createClient();
+    return redis.createClient();
 }
 
 function call(client, method, ...args) {

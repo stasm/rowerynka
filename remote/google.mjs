@@ -1,8 +1,9 @@
 // vim: ts=4 et sts=4 sw=4
 
-import { stringify } from "querystring";
+import querystring from "querystring";
 import { get_json } from "./util";
 
+const { stringify } = querystring;
 const {
     MAPS_STATIC_URL, MAPS_PLACES_URL, MAPS_API_KEY,
     AUTOCOMPLETE_LOCATION, AUTOCOMPLETE_RADIUS

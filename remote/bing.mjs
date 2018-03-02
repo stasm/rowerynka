@@ -1,7 +1,8 @@
 // vim: ts=4 et sts=4 sw=4
 
-import { stringify } from "querystring";
+import querystring from "querystring";
 
+const { stringify } = querystring;
 const { BING_API_KEY, BING_STATIC_URL } = process.env;
 
 export function map_image_url(dest, orig, label) {

@@ -3,9 +3,10 @@
         {
             "name"        : "rowerynka",
             "script"      : "index.js",
+            "node_args"   : "--experimental-modules",
             "watch"       : true,
             "merge_logs"  : true,
-            "cwd"         : "dist/remote",
+            "cwd"         : "remote",
             "env": {
                 "MESSENGER_API_URL": "https://graph.facebook.com/v2.6",
                 "MESSENGER_APP_SECRET": "",

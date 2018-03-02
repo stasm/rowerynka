@@ -1,6 +1,6 @@
 {
   "name": "rowerynka",
-  "private": "true",
+  "private": true,
   "version": "0.0.1",
   "description": "Rowerynka",
   "repository": {
@@ -20,8 +20,7 @@
     "redis": "^2.7.1"
   },
   "devDependencies": {
-    "eslint": "^3.9.1",
-    "rollup": "^0.41.4"
+    "eslint": "^3.9.1"
   },
   "engines": {
     "node": "^8.9.0"
