@@ -23,7 +23,7 @@
             },
             {
                 "latitude": 52.4677,
-                "longitude": 16.9786
+                "longitude": 16.9833
             }
         ]
     },
@@ -32,12 +32,12 @@
         "name": "Stacje Sponsorskie Nextbike PRM",
         "bounds": [
             {
-                "latitude": 52.3535,
-                "longitude": 16.8887
+                "latitude": 52.3538,
+                "longitude": 16.8867
             },
             {
                 "latitude": 52.4159,
-                "longitude": 16.89
+                "longitude": 16.9608
             }
         ]
     },
@@ -107,7 +107,7 @@
             },
             {
                 "latitude": 52.103,
-                "longitude": 21.1235
+                "longitude": 21.1344
             }
         ]
     },
@@ -150,20 +150,6 @@
             {
                 "latitude": 52.1177,
                 "longitude": 20.6404
-            }
-        ]
-    },
-    {
-        "uid": "342",
-        "name": "Katowice",
-        "bounds": [
-            {
-                "latitude": 50.1959,
-                "longitude": 18.9585
-            },
-            {
-                "latitude": 50.2842,
-                "longitude": 19.095
             }
         ]
     },
@@ -224,34 +210,6 @@
         ]
     },
     {
-        "uid": "359",
-        "name": "Michałowice",
-        "bounds": [
-            {
-                "latitude": 52.1398,
-                "longitude": 20.7947
-            },
-            {
-                "latitude": 52.1812,
-                "longitude": 20.9046
-            }
-        ]
-    },
-    {
-        "uid": "363",
-        "name": "Legnica",
-        "bounds": [
-            {
-                "latitude": 51.1995,
-                "longitude": 16.1518
-            },
-            {
-                "latitude": 51.2128,
-                "longitude": 16.2138
-            }
-        ]
-    },
-    {
         "uid": "393",
         "name": "Gliwice",
         "bounds": [
@@ -266,16 +224,16 @@
         ]
     },
     {
-        "uid": "450",
-        "name": "Częstochowa",
+        "uid": "339",
+        "name": "Stalowa Wola",
         "bounds": [
             {
-                "latitude": 50.8216,
-                "longitude": 19.1152
+                "latitude": 50.5503,
+                "longitude": 22.0466
             },
             {
-                "latitude": 50.8313,
-                "longitude": 19.1505
+                "latitude": 50.5918,
+                "longitude": 22.0759
             }
         ]
     },
@@ -290,20 +248,6 @@
             {
                 "latitude": 54.1927,
                 "longitude": 15.6627
-            }
-        ]
-    },
-    {
-        "uid": "431",
-        "name": "Kalisz",
-        "bounds": [
-            {
-                "latitude": 51.7432,
-                "longitude": 18.0537
-            },
-            {
-                "latitude": 51.77,
-                "longitude": 18.1022
             }
         ]
     },
@@ -332,6 +276,20 @@
             {
                 "latitude": 51.6488,
                 "longitude": 17.8213
+            }
+        ]
+    },
+    {
+        "uid": "461",
+        "name": "Piaseczno",
+        "bounds": [
+            {
+                "latitude": 52.0668,
+                "longitude": 21.018
+            },
+            {
+                "latitude": 52.099,
+                "longitude": 21.0523
             }
         ]
     }
