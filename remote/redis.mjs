@@ -2,8 +2,10 @@
 
 import redis from "redis";
 
+const { REDIS_URL } = process.env;
+
 export function create_client() {
-    return redis.createClient();
+    return redis.createClient(REDIS_URL);
 }
 
 function call(client, method, ...args) {
