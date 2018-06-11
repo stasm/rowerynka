@@ -1,0 +1,7 @@
+version: "3"
+services:
+  rowerynka:
+    env_file:
+      - ./rowerynka.env
+    ports:
+      - 59001:59001

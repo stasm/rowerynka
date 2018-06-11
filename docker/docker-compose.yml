@@ -5,13 +5,8 @@ services:
     volumes:
       - redis_data:/data
   rowerynka:
-    build: ../remote/
     image: stasmade/rowerynka
     depends_on:
       - redis
-    env_file:
-      - ./rowerynka.env
-    ports:
-      - 59001:59001
 volumes:
   redis_data:
