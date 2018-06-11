@@ -22,7 +22,9 @@ function sort(err, data) {
     }
 
     const cities = JSON.parse(data);
-    const city_names = cities.map(city => city.name);
+    const city_names = cities
+        .map(city => city.name)
+        .filter(name => !name.startsWith("Stacje Sponsorskie"));
 
     console.log(city_names.sort().join(", "));
 }

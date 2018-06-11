@@ -122,11 +122,13 @@ menu-help =
     — spróbuję znaleźć pasujący adres.
 
 menu-coverage =
-    Obecnie działam we Wrocławiu, Poznaniu, Opolu, Warszawie, Białymstoku,
-    Konstancinie Jeziornie, Lublinie, Świdniku, Grodzisku Mazowieckim,
-    Katowicach, Radomiu, Łodzi, Szczecinie, Michałowicach, Legnicy,
-    Gliwicach, Częstochowie, Kołobrzegu, Kaliszu, Szamotułach i Ostrowie
-    Wielkopolskim.
+    Obecnie działam w Białymstoku, Częstochowie, Gliwicach, Grodzisku
+    Mazowieckim, Jastrzębiu-Zdroju, Kaliszu, Katowicach,
+    Konstancinie-Jeziornie, Koszalinie, Kołobrzegu, Kędzierzynie-Koźlu,
+    Lublinie, Łodzi, Michałowicach, Opolu, Ostrowie Wielkopolskim,
+    Piasecznie, Pobiedziskach, Poznaniu, Pruszkowie, Pszczynie, Radomiu,
+    Sosnowcu, Stalowej Woli, Szamotułach, Szczecinie, Świdniku, Tychach,
+    Warszawie, Wrocławiu i Zabrzu.
 
 `);
 
