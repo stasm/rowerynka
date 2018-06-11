@@ -3,7 +3,7 @@
 const fetch = require("node-fetch");
 const { parseXmlString } = require("libxmljs");
 
-const NEXTBIKE_API_URL = "https://nextbike.net/maps/nextbike-live.xml";
+const NEXTBIKE_API_URL = "https://api.nextbike.net/maps/nextbike-live.xml";
 
 main();
 
