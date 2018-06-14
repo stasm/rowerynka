@@ -12,7 +12,7 @@
   "dependencies": {
     "body-parser": "^1.15.0",
     "express": "^4.13.4",
-    "fluent": "^0.3.0",
+    "fluent": "^0.6.4",
     "fluent-intl-polyfill": "0.0.1",
     "geolib": "^2.0.22",
     "libxmljs": "^0.18.7",

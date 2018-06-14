@@ -7,8 +7,7 @@ const re_newlines = /\r?\n|\r/g;
 
 const cx = new fluent.MessageContext("pl");
 cx.addMessages(`
-
-[[ Text responses ]]
+## Text responses
 
 welcome-new-user =
     Witaj na pokładzie! Aby znaleźć najbliższy wolny rower miejski, wciśnij
@@ -24,36 +23,30 @@ help =
     — spróbuję znaleźć pasujący adres.
 
 
-[[ Quick replies ]]
+## Quick replies
 
 send-location = Wyślij lokalizację
 
 
-[[ Errors ]]
+## Errors
 
 unknown-message =
     Nie rozumiem.
-
 unknown-attachment =
     Nie rozumiem.
-
 unknown-postback =
     Nie rozumiem.
-
 unknown-quick-reply =
     Nie rozumiem.
-
 generic-error =
     Ups, coś poszło nie tak. Spróbuj ponownie za chwilę.
-
 no-stations-available =
     W pobliżu nie ma żadnych stacji rowerów.
-
 no-bikes-available =
     W pobliżu nie ma żadnych dostępnych rowerów.
 
 
-[[ Threads ]]
+## Threads
 
 thread-yes = Tak
 thread-no = Nie
@@ -79,7 +72,7 @@ thread-guess-nevermind =
     OK, nieważne.
 
 
-[[ Station listing ]]
+## Station listing
 
 station-detail =
     { $bikes ->
@@ -95,26 +88,15 @@ open-map =
 quick-reply-thanks =
     Dzięki
 
-acknowledgement-1 =
-    Do usług.
-
-acknowledgement-2 =
-    Polecam się.
-
-acknowledgement-3 =
-    Spoko.
-
-acknowledgement-4 =
-    Żaden kłopot.
-
-acknowledgement-5 =
-    Nie ma sprawy.
-
-acknowledgement-6 =
-    Nie ma za co.
+acknowledgement-1 = Do usług.
+acknowledgement-2 = Polecam się.
+acknowledgement-3 = Spoko.
+acknowledgement-4 = Żaden kłopot.
+acknowledgement-5 = Nie ma sprawy.
+acknowledgement-6 = Nie ma za co.
 
 
-[[ Persistent Menu ]]
+## Persistent Menu
 
 menu-help =
     Użyj przycisku "Wyślij lokalizację", żeby rozpocząć szukanie rowerów
@@ -133,11 +115,10 @@ menu-coverage =
 `);
 
 export default function _(id, args) {
-    const msg = cx.messages.get(id);
-
-    if (!msg) {
+    if (!cx.hasMessage(id)) {
         return id;
     }
 
+    const msg = cx.getMessage(id);
     return cx.format(msg, args).replace(re_newlines, " ");
 }

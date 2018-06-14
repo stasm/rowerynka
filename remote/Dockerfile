@@ -17,5 +17,5 @@ ENV MESSENGER_API_URL="https://graph.facebook.com/v2.6" \
     GIPHY_API_URL="http://api.giphy.com/v1/gifs" \
     NODE_ENV="production"
 
-ENTRYPOINT ["node", "--experimental-modules"]
+ENTRYPOINT ["node", "--experimental-modules", "--harmony-async-iteration"]
 CMD ["index.mjs"]
