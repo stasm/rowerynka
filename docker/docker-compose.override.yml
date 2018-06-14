@@ -3,6 +3,6 @@ services:
   rowerynka:
     build: ../remote/
     env_file:
-      - ./rowerynka.env
+      - ./development.env
     ports:
       - 59001:59001

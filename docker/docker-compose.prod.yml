@@ -2,6 +2,6 @@ version: "3"
 services:
   rowerynka:
     env_file:
-      - ./rowerynka.env
+      - ./production.env
     ports:
       - 59001:59001
