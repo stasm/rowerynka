@@ -8,5 +8,9 @@ services:
     image: stasmade/rowerynka
     depends_on:
       - redis
+    env_file:
+      - ./production.env
+    ports:
+      - 59001:59001
 volumes:
   redis_data:
