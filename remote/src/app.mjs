@@ -37,8 +37,11 @@ function webhook_post(req, res) {
         return res.sendStatus(500);
     }
 
-    for (const page of body.entry) {
-        page.messaging.forEach(handle_event);
+    for (const entry of body.entry) {
+        // Some events are not message-related; ignore them.
+        if (entry.messaging) {
+            entry.messaging.forEach(handle_event);
+        }
     }
 
     res.sendStatus(200);
