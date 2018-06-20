@@ -2,7 +2,12 @@ version: "3"
 services:
   rowerynka:
     build: ../remote/
+    command: src/index.mjs
+    entrypoint: node --experimental-modules --harmony-async-iteration --inspect=0.0.0.0:9222
     env_file:
       - ./development.env
     ports:
       - 59001:59001
+      - 9222:9222
+    volumes:
+      - ../remote/src:/app/src

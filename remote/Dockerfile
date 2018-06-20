@@ -1,6 +1,6 @@
 FROM node:9-alpine
 
-COPY *.json *.mjs /app/
+COPY . /app/
 WORKDIR /app
 
 RUN apk --no-cache add --virtual gyp-deps \
@@ -18,4 +18,4 @@ ENV MESSENGER_API_URL="https://graph.facebook.com/v3.0" \
     NODE_ENV="production"
 
 ENTRYPOINT ["node", "--experimental-modules", "--harmony-async-iteration"]
-CMD ["index.mjs"]
+CMD ["src/index.mjs"]
