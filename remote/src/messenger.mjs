@@ -13,7 +13,7 @@ export async function send(message) {
             recipient_id, message_id
         } = await post_json(url, query, message);
     } catch (err) {
-        return console.error("Sending failed: ", err.message);
+        console.error("Sending failed: ", err.message);
     }
 
     return { recipient_id, message_id };
@@ -29,7 +29,7 @@ export async function get_user_profile(user_id) {
     try {
         var { gender = "other" } = await get_json(url, query);
     } catch (err) {
-        return console.error("Getting user profile failed: ", err.message);
+        console.error("Getting user profile failed: ", err.message);
     }
 
     return { user_id, gender };
