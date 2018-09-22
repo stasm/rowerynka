@@ -24,7 +24,11 @@ function sort(err, data) {
     const cities = JSON.parse(data);
     const city_names = cities
         .map(city => city.name)
-        .filter(name => !name.startsWith("Stacje Sponsorskie"));
-
-    console.log(city_names.sort().join(", "));
+        .filter(name =>
+            !name.startsWith("Stacje Sponsorskie")
+            && !name.startsWith("Orlen"));
+    const sorted = city_names.sort(
+        (a, b) => a.localeCompare(b, "pl"));
+    console.log(sorted.join(", "));
+    console.log(`Liczba miast: ${sorted.length}`);
 }

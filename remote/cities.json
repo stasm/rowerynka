@@ -5,11 +5,25 @@
         "bounds": [
             {
                 "latitude": 51.048,
-                "longitude": 16.9602
+                "longitude": 16.9605
             },
             {
                 "latitude": 51.136,
                 "longitude": 17.1429
+            }
+        ]
+    },
+    {
+        "uid": "472",
+        "name": "Orlen Wrocław",
+        "bounds": [
+            {
+                "latitude": 51.0835,
+                "longitude": 16.8827
+            },
+            {
+                "latitude": 51.1464,
+                "longitude": 17.0485
             }
         ]
     },
@@ -19,7 +33,7 @@
         "bounds": [
             {
                 "latitude": 52.3635,
-                "longitude": 16.7353
+                "longitude": 16.8039
             },
             {
                 "latitude": 52.4677,
@@ -84,16 +98,16 @@
         ]
     },
     {
-        "uid": "509",
-        "name": "Jastrzębie-Zdrój",
+        "uid": "475",
+        "name": "Orlen Warszawa",
         "bounds": [
             {
-                "latitude": 49.9452,
-                "longitude": 18.5704
+                "latitude": 52.148,
+                "longitude": 20.897
             },
             {
-                "latitude": 49.952,
-                "longitude": 18.6081
+                "latitude": 52.2505,
+                "longitude": 21.148
             }
         ]
     },
@@ -108,6 +122,20 @@
             {
                 "latitude": 53.2655,
                 "longitude": 23.3343
+            }
+        ]
+    },
+    {
+        "uid": "470",
+        "name": "Orlen Białystok",
+        "bounds": [
+            {
+                "latitude": 53.1026,
+                "longitude": 23.098
+            },
+            {
+                "latitude": 53.1592,
+                "longitude": 23.2136
             }
         ]
     },
@@ -135,7 +163,7 @@
             },
             {
                 "latitude": 51.2821,
-                "longitude": 22.6294
+                "longitude": 22.6366
             }
         ]
     },
@@ -145,11 +173,25 @@
         "bounds": [
             {
                 "latitude": 51.2112,
-                "longitude": 22.5676
+                "longitude": 22.693
             },
             {
-                "latitude": 51.2498,
+                "latitude": 51.2259,
                 "longitude": 22.7082
+            }
+        ]
+    },
+    {
+        "uid": "471",
+        "name": "Orlen Lublin",
+        "bounds": [
+            {
+                "latitude": 51.2243,
+                "longitude": 22.4909
+            },
+            {
+                "latitude": 51.2644,
+                "longitude": 22.6131
             }
         ]
     },
@@ -163,7 +205,7 @@
             },
             {
                 "latitude": 52.1177,
-                "longitude": 20.6409
+                "longitude": 20.6544
             }
         ]
     },
@@ -178,6 +220,20 @@
             {
                 "latitude": 50.2842,
                 "longitude": 19.095
+            }
+        ]
+    },
+    {
+        "uid": "474",
+        "name": "Orlen Katowice",
+        "bounds": [
+            {
+                "latitude": 50.2303,
+                "longitude": 18.9719
+            },
+            {
+                "latitude": 50.2782,
+                "longitude": 19.0819
             }
         ]
     },
@@ -214,12 +270,26 @@
         "name": "Lódź",
         "bounds": [
             {
-                "latitude": 51.7022,
+                "latitude": 51.6988,
                 "longitude": 19.3645
             },
             {
                 "latitude": 51.8226,
                 "longitude": 19.5693
+            }
+        ]
+    },
+    {
+        "uid": "473",
+        "name": "Orlen Łódź",
+        "bounds": [
+            {
+                "latitude": 51.7582,
+                "longitude": 19.4267
+            },
+            {
+                "latitude": 51.804,
+                "longitude": 19.5546
             }
         ]
     },
@@ -247,7 +317,21 @@
             },
             {
                 "latitude": 52.1812,
-                "longitude": 20.9957
+                "longitude": 20.9046
+            }
+        ]
+    },
+    {
+        "uid": "363",
+        "name": "Legnica",
+        "bounds": [
+            {
+                "latitude": 51.1774,
+                "longitude": 16.1522
+            },
+            {
+                "latitude": 51.2127,
+                "longitude": 16.2146
             }
         ]
     },
@@ -275,7 +359,7 @@
             },
             {
                 "latitude": 50.5918,
-                "longitude": 22.0759
+                "longitude": 22.0799
             }
         ]
     },
@@ -331,7 +415,7 @@
             },
             {
                 "latitude": 52.1827,
-                "longitude": 20.8201
+                "longitude": 20.8388
             }
         ]
     },
@@ -344,8 +428,8 @@
                 "longitude": 18.1362
             },
             {
-                "latitude": 50.3546,
-                "longitude": 18.2614
+                "latitude": 50.3805,
+                "longitude": 18.3215
             }
         ]
     },
@@ -368,11 +452,11 @@
         "name": "Kalisz",
         "bounds": [
             {
-                "latitude": 51.7437,
-                "longitude": 18.0466
+                "latitude": 51.7265,
+                "longitude": 18.0238
             },
             {
-                "latitude": 51.7736,
+                "latitude": 51.7775,
                 "longitude": 18.1522
             }
         ]
@@ -387,7 +471,7 @@
             },
             {
                 "latitude": 52.6225,
-                "longitude": 16.5927
+                "longitude": 16.5925
             }
         ]
     },
@@ -396,12 +480,12 @@
         "name": "Ostrów Wielkopolski",
         "bounds": [
             {
-                "latitude": 51.6411,
+                "latitude": 51.6375,
                 "longitude": 17.8066
             },
             {
-                "latitude": 51.65,
-                "longitude": 17.8253
+                "latitude": 51.671,
+                "longitude": 17.8418
             }
         ]
     },
@@ -452,12 +536,12 @@
         "name": "Zabrze",
         "bounds": [
             {
-                "latitude": 77.3741,
-                "longitude": 204.917
+                "latitude": 50.2892,
+                "longitude": 18.7815
             },
             {
-                "latitude": 77.3741,
-                "longitude": 204.917
+                "latitude": 50.3636,
+                "longitude": 18.8068
             }
         ]
     },
@@ -472,6 +556,160 @@
             {
                 "latitude": 52.4793,
                 "longitude": 17.2866
+            }
+        ]
+    },
+    {
+        "uid": "509",
+        "name": "Jastrzębie-Zdrój",
+        "bounds": [
+            {
+                "latitude": 49.9424,
+                "longitude": 18.5614
+            },
+            {
+                "latitude": 49.9656,
+                "longitude": 18.6219
+            }
+        ]
+    },
+    {
+        "uid": "519",
+        "name": "Siemianowice Śląskie",
+        "bounds": [
+            {
+                "latitude": 50.2989,
+                "longitude": 18.9987
+            },
+            {
+                "latitude": 50.3195,
+                "longitude": 19.0262
+            }
+        ]
+    },
+    {
+        "uid": "516",
+        "name": "Świętochłowice",
+        "bounds": [
+            {
+                "latitude": 50.2855,
+                "longitude": 18.9132
+            },
+            {
+                "latitude": 50.3059,
+                "longitude": 18.9316
+            }
+        ]
+    },
+    {
+        "uid": "518",
+        "name": "Piotrków Trybunalski",
+        "bounds": [
+            {
+                "latitude": 51.3992,
+                "longitude": 19.6644
+            },
+            {
+                "latitude": 51.4101,
+                "longitude": 19.7038
+            }
+        ]
+    },
+    {
+        "uid": "521",
+        "name": "Płock",
+        "bounds": [
+            {
+                "latitude": 52.5306,
+                "longitude": 19.6537
+            },
+            {
+                "latitude": 52.559,
+                "longitude": 19.7627
+            }
+        ]
+    },
+    {
+        "uid": "528",
+        "name": "Tychowo",
+        "bounds": [
+            {
+                "latitude": 53.9219,
+                "longitude": 16.2306
+            },
+            {
+                "latitude": 53.9395,
+                "longitude": 16.2524
+            }
+        ]
+    },
+    {
+        "uid": "534",
+        "name": "Atrakcje turystyczne Tychowo",
+        "bounds": [
+            {
+                "latitude": 53.8633,
+                "longitude": 16.1146
+            },
+            {
+                "latitude": 53.9862,
+                "longitude": 16.4098
+            }
+        ]
+    },
+    {
+        "uid": "527",
+        "name": "Otwock",
+        "bounds": [
+            {
+                "latitude": 52.0965,
+                "longitude": 21.2455
+            },
+            {
+                "latitude": 52.1214,
+                "longitude": 21.2765
+            }
+        ]
+    },
+    {
+        "uid": "523",
+        "name": "Ciechanów",
+        "bounds": [
+            {
+                "latitude": 52.8722,
+                "longitude": 20.5922
+            },
+            {
+                "latitude": 52.8841,
+                "longitude": 20.6329
+            }
+        ]
+    },
+    {
+        "uid": "545",
+        "name": "Konin",
+        "bounds": [
+            {
+                "latitude": 52.1977,
+                "longitude": 18.2094
+            },
+            {
+                "latitude": 52.2391,
+                "longitude": 18.2847
+            }
+        ]
+    },
+    {
+        "uid": "529",
+        "name": "Zielona Góra",
+        "bounds": [
+            {
+                "latitude": 51.9058,
+                "longitude": 15.4547
+            },
+            {
+                "latitude": 51.9786,
+                "longitude": 15.5595
             }
         ]
     }

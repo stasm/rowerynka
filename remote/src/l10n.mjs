@@ -3,7 +3,7 @@
 import "fluent-intl-polyfill";
 import fluent from "fluent";
 
-const re_newlines = /\r?\n|\r/g;
+const re_newlines = /\r?\n/g;
 
 const cx = new fluent.MessageContext("pl");
 cx.addMessages(`
@@ -104,13 +104,15 @@ menu-help =
     — spróbuję znaleźć pasujący adres.
 
 menu-coverage =
-    Obecnie działam w Białymstoku, Częstochowie, Gliwicach, Grodzisku
-    Mazowieckim, Jastrzębiu-Zdroju, Kaliszu, Katowicach,
-    Konstancinie-Jeziornie, Koszalinie, Kołobrzegu, Kędzierzynie-Koźlu,
-    Lublinie, Łodzi, Michałowicach, Opolu, Ostrowie Wielkopolskim,
-    Piasecznie, Pobiedziskach, Poznaniu, Pruszkowie, Pszczynie, Radomiu,
-    Sosnowcu, Stalowej Woli, Szamotułach, Szczecinie, Świdniku, Tychach,
-    Warszawie, Wrocławiu i Zabrzu.
+    Obecnie działam w następujących miastach: Białystok, Ciechanów,
+    Częstochowa, Gliwice, Grodzisk Mazowiecki, Jastrzębie-Zdrój, Kalisz,
+    Katowice, Kędzierzyn-Koźle, Kołobrzeg, Konin, Konstancin Jeziorna,
+    Koszalin, Legnica, Lódź, Lublin, Michałowice, Opole, Ostrów Wielkopolski,
+    Otwock, Piaseczno, Piotrków Trybunalski, Płock, Pobiedziska, Poznań,
+    Pruszków, Pszczyna, Radom, Siemianowice Śląskie, Sosnowiec, Stalowa Wola,
+    Świdnik, Świętochłowice, Szamotuły, Szczecin, Tychowo, Tychy, Warszawa,
+    Wrocław, Zabrze, Zielona Góra.
+
 
 `);
 
