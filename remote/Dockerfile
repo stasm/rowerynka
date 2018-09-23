@@ -1,4 +1,4 @@
-FROM node:9-alpine
+FROM node:10.11.0-alpine
 
 COPY . /app/
 WORKDIR /app
@@ -17,5 +17,5 @@ ENV MESSENGER_API_URL="https://graph.facebook.com/v3.0" \
     GIPHY_API_URL="http://api.giphy.com/v1/gifs" \
     NODE_ENV="production"
 
-ENTRYPOINT ["node", "--experimental-modules", "--harmony-async-iteration"]
+ENTRYPOINT ["node", "--experimental-modules"]
 CMD ["src/index.mjs"]

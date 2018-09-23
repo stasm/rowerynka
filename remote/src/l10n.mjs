@@ -1,12 +1,11 @@
 // vim: ts=4 et sts=4 sw=4
 
-import "fluent-intl-polyfill";
 import fluent from "fluent";
 
 const re_newlines = /\r?\n/g;
 
-const cx = new fluent.MessageContext("pl");
-cx.addMessages(`
+const bundle = new fluent.FluentBundle("pl");
+bundle.addMessages(`
 ## Text responses
 
 welcome-new-user =
@@ -117,10 +116,10 @@ menu-coverage =
 `);
 
 export default function _(id, args) {
-    if (!cx.hasMessage(id)) {
+    if (!bundle.hasMessage(id)) {
         return id;
     }
 
-    const msg = cx.getMessage(id);
-    return cx.format(msg, args).replace(re_newlines, " ");
+    const msg = bundle.getMessage(id);
+    return bundle.format(msg, args).replace(re_newlines, " ");
 }
