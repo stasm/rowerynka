@@ -103,16 +103,15 @@ menu-help =
     — spróbuję znaleźć pasujący adres.
 
 menu-coverage =
-    Obecnie działam w następujących miastach: Białystok, Ciechanów,
-    Częstochowa, Gliwice, Grodzisk Mazowiecki, Jastrzębie-Zdrój, Kalisz,
-    Katowice, Kędzierzyn-Koźle, Kołobrzeg, Konin, Konstancin Jeziorna,
-    Koszalin, Legnica, Lódź, Lublin, Michałowice, Opole, Ostrów Wielkopolski,
-    Otwock, Piaseczno, Piotrków Trybunalski, Płock, Pobiedziska, Poznań,
-    Pruszków, Pszczyna, Radom, Siemianowice Śląskie, Sosnowiec, Stalowa Wola,
-    Świdnik, Świętochłowice, Szamotuły, Szczecin, Tychowo, Tychy, Warszawa,
-    Wrocław, Zabrze, Zielona Góra.
-
-
+    Obecnie działam w następujących miastach: Białystok, Chorzów, Częstochowa,
+    Gliwice, Grodzisk Mazowiecki, Kalisz, Katowice, Kędzierzyn-Koźle,
+    Kołobrzeg, Koluszki, Konin, Konstancin Jeziorna, Koszalin, Kutno, Łask,
+    Legnica, Lódź, Łowicz, Lublin, Luboń, Marki, Michałowice, Ostrów
+    Wielkopolski, Pabianice, Piaseczno, Pielgrzymka, Płock, Pobiedziska,
+    Poznań, Pruszków, Pszczyna, Radom, Siemianowice Śląskie, Sieradz,
+    Skierniewice, Sosnowiec, Świdnik, Szamotuły, Szczecin, Tarnów, Tychowo,
+    Tychy, Warszawa, Wrocław, Zabrze, Zduńska Wola, Zgierz, Zielona Góra,
+    Żyrardów.
 `);
 
 export default function _(id, args) {
