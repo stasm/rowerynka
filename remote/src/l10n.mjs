@@ -9,22 +9,16 @@ bundle.addMessages(`
 ## Text responses
 
 welcome-new-user =
-    Witaj na pokładzie! Aby znaleźć najbliższy wolny rower miejski, wciśnij
-    guzik "Wyślij lokalizację".
+    Witaj na pokładzie! Aby znaleźć najbliższy wolny rower miejski, wpisz
+    nazwę ulicy lub miejsca.
 
 hello-user =
-    Cześć! Aby znaleźć najbliższy wolny rower miejski, wciśnij guzik "Wyślij
-    lokalizację".
+    Cześć! Aby znaleźć najbliższy wolny rower miejski, wpisz nazwę ulicy lub
+    miejsca.
 
 help =
-    Użyj przycisku "Wyślij lokalizację", żeby rozpocząć szukanie rowerów
-    miejskich w Twojej okolicy. Możesz też wpisać nazwę ulicy lub miejsca
-    — spróbuję znaleźć pasujący adres.
-
-
-## Quick replies
-
-send-location = Wyślij lokalizację
+    Aby rozpocząć szukanie rowerów miejskich w Twojej okolicy, wpisz nazwę
+    ulicy lub miejsca — spróbuję znaleźć pasujący adres.
 
 
 ## Errors
@@ -98,9 +92,8 @@ acknowledgement-6 = Nie ma za co.
 ## Persistent Menu
 
 menu-help =
-    Użyj przycisku "Wyślij lokalizację", żeby rozpocząć szukanie rowerów
-    miejskich w Twojej okolicy. Możesz też wpisać nazwę ulicy lub miejsca
-    — spróbuję znaleźć pasujący adres.
+    Aby rozpocząć szukanie rowerów miejskich w Twojej okolicy, wpisz nazwę
+    ulicy lub miejsca — spróbuję znaleźć pasujący adres.
 
 menu-coverage =
     Obecnie działam w następujących miastach: Białystok, Chorzów, Częstochowa,
