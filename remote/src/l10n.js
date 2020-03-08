@@ -1,11 +1,10 @@
 // vim: ts=4 et sts=4 sw=4
 
-import fluent from "fluent";
+import fluent from "@fluent/bundle";
 
 const re_newlines = /\r?\n/g;
 
-const bundle = new fluent.FluentBundle("pl");
-bundle.addMessages(`
+const messages = new fluent.FluentResource(`
 ## Text responses
 
 welcome-new-user =
@@ -107,11 +106,18 @@ menu-coverage =
     Żyrardów.
 `);
 
+const bundle = new fluent.FluentBundle("pl");
+bundle.addResource(messages);
+
 export default function _(id, args) {
     if (!bundle.hasMessage(id)) {
         return id;
     }
 
     const msg = bundle.getMessage(id);
-    return bundle.format(msg, args).replace(re_newlines, " ");
+    if (msg.value) {
+        return bundle.formatPattern(msg.value, args).replace(re_newlines, " ");
+    }
+
+    return id;
 }
