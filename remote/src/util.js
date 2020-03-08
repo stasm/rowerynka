@@ -69,7 +69,7 @@ export async function post_json(url, query, body) {
 }
 
 export function distance(origin, destination) {
-    return geolib.getDistanceSimple(origin, destination, 10);
+    return geolib.getDistance(origin, destination, 10);
 }
 
 export function bounds(point, radius) {

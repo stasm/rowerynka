@@ -13,7 +13,7 @@
     "@fluent/bundle": "0.15.0",
     "body-parser": "1.19.0",
     "express": "4.17.1",
-    "geolib": "2.0.24",
+    "geolib": "3.2.1",
     "libxmljs": "0.19.7",
     "node-fetch": "2.6.0",
     "redis": "3.0.2"
