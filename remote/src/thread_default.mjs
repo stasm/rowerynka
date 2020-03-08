@@ -68,14 +68,6 @@ async function received_message(user_id, message) {
     if (message.attachments) {
         const [attachment] = message.attachments;
         switch (attachment.type) {
-            case "location": {
-                const { lat, long } = attachment.payload.coordinates;
-                const origin = {
-                    latitude: lat,
-                    longitude: long,
-                };
-                return await send_locations(user_id, origin);
-            }
             case "image":
                 return await send_random_gif(user_id);
             default:
