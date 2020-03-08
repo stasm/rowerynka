@@ -4,12 +4,12 @@
         "name": "Wrocław",
         "bounds": [
             {
-                "latitude": 51.0448,
-                "longitude": 16.8715
+                "latitude": 51.0419,
+                "longitude": 16.8497
             },
             {
-                "latitude": 51.1759,
-                "longitude": 17.1566
+                "latitude": 51.2847,
+                "longitude": 17.1484
             }
         ]
     },
@@ -18,7 +18,7 @@
         "name": "Poznań",
         "bounds": [
             {
-                "latitude": 52.3601,
+                "latitude": 52.3522,
                 "longitude": 16.8039
             },
             {
@@ -47,7 +47,7 @@
         "bounds": [
             {
                 "latitude": 52.232,
-                "longitude": 20.9708
+                "longitude": 20.9706
             },
             {
                 "latitude": 52.2606,
@@ -78,7 +78,7 @@
                 "longitude": 20.9292
             },
             {
-                "latitude": 52.3203,
+                "latitude": 52.3501,
                 "longitude": 21.073
             }
         ]
@@ -94,34 +94,6 @@
             {
                 "latitude": 52.2505,
                 "longitude": 21.148
-            }
-        ]
-    },
-    {
-        "uid": "245",
-        "name": "Białystok",
-        "bounds": [
-            {
-                "latitude": 53.0888,
-                "longitude": 22.9855
-            },
-            {
-                "latitude": 53.2655,
-                "longitude": 23.3343
-            }
-        ]
-    },
-    {
-        "uid": "470",
-        "name": "Orlen Białystok",
-        "bounds": [
-            {
-                "latitude": 53.1026,
-                "longitude": 23.1007
-            },
-            {
-                "latitude": 53.1592,
-                "longitude": 23.2136
             }
         ]
     },
@@ -144,7 +116,7 @@
         "name": "Lublin",
         "bounds": [
             {
-                "latitude": 51.1896,
+                "latitude": 51.1898,
                 "longitude": 22.4805
             },
             {
@@ -168,20 +140,6 @@
         ]
     },
     {
-        "uid": "471",
-        "name": "Orlen Lublin",
-        "bounds": [
-            {
-                "latitude": 51.2243,
-                "longitude": 22.4909
-            },
-            {
-                "latitude": 51.2644,
-                "longitude": 22.6131
-            }
-        ]
-    },
-    {
         "uid": "255",
         "name": "Grodzisk Mazowiecki",
         "bounds": [
@@ -192,76 +150,6 @@
             {
                 "latitude": 52.1177,
                 "longitude": 20.6544
-            }
-        ]
-    },
-    {
-        "uid": "342",
-        "name": "Katowice",
-        "bounds": [
-            {
-                "latitude": 50.1744,
-                "longitude": 18.9585
-            },
-            {
-                "latitude": 50.2842,
-                "longitude": 19.095
-            }
-        ]
-    },
-    {
-        "uid": "400",
-        "name": "Radom",
-        "bounds": [
-            {
-                "latitude": 51.3631,
-                "longitude": 21.1085
-            },
-            {
-                "latitude": 51.4297,
-                "longitude": 21.1803
-            }
-        ]
-    },
-    {
-        "uid": "401",
-        "name": "Stacje Sponsorskie Radom",
-        "bounds": [
-            {
-                "latitude": 51.3595,
-                "longitude": 21.1205
-            },
-            {
-                "latitude": 51.3994,
-                "longitude": 21.1655
-            }
-        ]
-    },
-    {
-        "uid": "330",
-        "name": "Lódź",
-        "bounds": [
-            {
-                "latitude": 51.6988,
-                "longitude": 19.3645
-            },
-            {
-                "latitude": 51.8226,
-                "longitude": 19.5693
-            }
-        ]
-    },
-    {
-        "uid": "473",
-        "name": "Orlen Łódź",
-        "bounds": [
-            {
-                "latitude": 51.7582,
-                "longitude": 19.4267
-            },
-            {
-                "latitude": 51.804,
-                "longitude": 19.5546
             }
         ]
     },
@@ -280,20 +168,6 @@
         ]
     },
     {
-        "uid": "359",
-        "name": "Michałowice",
-        "bounds": [
-            {
-                "latitude": 52.1398,
-                "longitude": 20.7947
-            },
-            {
-                "latitude": 52.1812,
-                "longitude": 20.9046
-            }
-        ]
-    },
-    {
         "uid": "363",
         "name": "Legnica",
         "bounds": [
@@ -304,90 +178,6 @@
             {
                 "latitude": 51.2127,
                 "longitude": 16.2146
-            }
-        ]
-    },
-    {
-        "uid": "393",
-        "name": "Gliwice",
-        "bounds": [
-            {
-                "latitude": 50.281,
-                "longitude": 18.6531
-            },
-            {
-                "latitude": 50.3235,
-                "longitude": 18.733
-            }
-        ]
-    },
-    {
-        "uid": "411",
-        "name": "Pszczyna",
-        "bounds": [
-            {
-                "latitude": 49.9357,
-                "longitude": 18.889
-            },
-            {
-                "latitude": 49.9885,
-                "longitude": 18.9771
-            }
-        ]
-    },
-    {
-        "uid": "413",
-        "name": "Tychy",
-        "bounds": [
-            {
-                "latitude": 50.0941,
-                "longitude": 18.9436
-            },
-            {
-                "latitude": 50.1362,
-                "longitude": 19.0006
-            }
-        ]
-    },
-    {
-        "uid": "450",
-        "name": "Częstochowa",
-        "bounds": [
-            {
-                "latitude": 50.7698,
-                "longitude": 19.081
-            },
-            {
-                "latitude": 50.841,
-                "longitude": 19.1628
-            }
-        ]
-    },
-    {
-        "uid": "442",
-        "name": "Pruszków",
-        "bounds": [
-            {
-                "latitude": 52.1501,
-                "longitude": 20.7482
-            },
-            {
-                "latitude": 52.1836,
-                "longitude": 20.8388
-            }
-        ]
-    },
-    {
-        "uid": "421",
-        "name": "Kędzierzyn-Koźle",
-        "bounds": [
-            {
-                "latitude": 50.3163,
-                "longitude": 18.1362
-            },
-            {
-                "latitude": 50.3805,
-                "longitude": 18.3215
             }
         ]
     },
@@ -406,26 +196,12 @@
         ]
     },
     {
-        "uid": "431",
-        "name": "Kalisz",
-        "bounds": [
-            {
-                "latitude": 51.7265,
-                "longitude": 18.0238
-            },
-            {
-                "latitude": 51.7775,
-                "longitude": 18.1522
-            }
-        ]
-    },
-    {
         "uid": "446",
         "name": "Szamotuły",
         "bounds": [
             {
-                "latitude": 52.6031,
-                "longitude": 16.5732
+                "latitude": 52.5968,
+                "longitude": 16.5608
             },
             {
                 "latitude": 52.6225,
@@ -452,7 +228,7 @@
         "name": "Piaseczno",
         "bounds": [
             {
-                "latitude": 52.062,
+                "latitude": 52.0518,
                 "longitude": 21.018
             },
             {
@@ -486,62 +262,6 @@
             {
                 "latitude": 50.2904,
                 "longitude": 19.1613
-            }
-        ]
-    },
-    {
-        "uid": "498",
-        "name": "Zabrze",
-        "bounds": [
-            {
-                "latitude": 50.2892,
-                "longitude": 18.7669
-            },
-            {
-                "latitude": 50.3636,
-                "longitude": 18.8068
-            }
-        ]
-    },
-    {
-        "uid": "504",
-        "name": "Pobiedziska",
-        "bounds": [
-            {
-                "latitude": 52.4673,
-                "longitude": 17.1686
-            },
-            {
-                "latitude": 52.4793,
-                "longitude": 17.2866
-            }
-        ]
-    },
-    {
-        "uid": "519",
-        "name": "Siemianowice Śląskie",
-        "bounds": [
-            {
-                "latitude": 50.2937,
-                "longitude": 18.9987
-            },
-            {
-                "latitude": 50.3272,
-                "longitude": 19.0447
-            }
-        ]
-    },
-    {
-        "uid": "521",
-        "name": "Płock",
-        "bounds": [
-            {
-                "latitude": 52.5141,
-                "longitude": 19.6537
-            },
-            {
-                "latitude": 52.5608,
-                "longitude": 19.7732
             }
         ]
     },
@@ -644,30 +364,16 @@
         ]
     },
     {
-        "uid": "551",
-        "name": "Żyrardów",
-        "bounds": [
-            {
-                "latitude": 52.0503,
-                "longitude": 20.428
-            },
-            {
-                "latitude": 52.0564,
-                "longitude": 20.4514
-            }
-        ]
-    },
-    {
         "uid": "562",
         "name": "Koluszki (RL)",
         "bounds": [
             {
-                "latitude": 51.7225,
+                "latitude": 51.7148,
                 "longitude": 19.7135
             },
             {
                 "latitude": 51.776,
-                "longitude": 19.8725
+                "longitude": 19.8736
             }
         ]
     },
@@ -705,11 +411,11 @@
         "bounds": [
             {
                 "latitude": 51.6514,
-                "longitude": 19.3261
+                "longitude": 19.3213
             },
             {
-                "latitude": 51.7256,
-                "longitude": 19.4455
+                "latitude": 51.6693,
+                "longitude": 19.384
             }
         ]
     },
@@ -722,8 +428,8 @@
                 "longitude": 18.7066
             },
             {
-                "latitude": 51.6025,
-                "longitude": 18.7487
+                "latitude": 51.7244,
+                "longitude": 19.4707
             }
         ]
     },
@@ -732,8 +438,8 @@
         "name": "Skierniewice (RL)",
         "bounds": [
             {
-                "latitude": 51.9312,
-                "longitude": 20.1126
+                "latitude": 51.9423,
+                "longitude": 20.1162
             },
             {
                 "latitude": 51.9811,
@@ -747,11 +453,11 @@
         "bounds": [
             {
                 "latitude": 51.5741,
-                "longitude": 18.921
+                "longitude": 18.7474
             },
             {
-                "latitude": 51.611,
-                "longitude": 19.0066
+                "latitude": 51.7595,
+                "longitude": 19.4588
             }
         ]
     },
@@ -760,12 +466,12 @@
         "name": "Zgierz (RL)",
         "bounds": [
             {
-                "latitude": 51.7483,
+                "latitude": 51.8165,
                 "longitude": 19.3783
             },
             {
                 "latitude": 51.8822,
-                "longitude": 19.4356
+                "longitude": 19.4541
             }
         ]
     },
@@ -774,12 +480,12 @@
         "name": "Kutno (RL)",
         "bounds": [
             {
-                "latitude": 52.215,
-                "longitude": 19.3255
+                "latitude": 52.1059,
+                "longitude": 19.3218
             },
             {
                 "latitude": 52.2448,
-                "longitude": 19.3785
+                "longitude": 19.9555
             }
         ]
     },
@@ -788,8 +494,8 @@
         "name": "Łódź (RL)",
         "bounds": [
             {
-                "latitude": 51.6579,
-                "longitude": 19.3297
+                "latitude": 51.7192,
+                "longitude": 19.3591
             },
             {
                 "latitude": 51.821,
@@ -802,12 +508,12 @@
         "name": "Pielgrzymka",
         "bounds": [
             {
-                "latitude": 51.0197,
+                "latitude": 51.0632,
                 "longitude": 15.7491
             },
             {
                 "latitude": 51.1351,
-                "longitude": 15.9215
+                "longitude": 15.8153
             }
         ]
     },
@@ -822,6 +528,20 @@
             {
                 "latitude": 52.3522,
                 "longitude": 16.8925
+            }
+        ]
+    },
+    {
+        "uid": "630",
+        "name": "Komorniki",
+        "bounds": [
+            {
+                "latitude": 52.3347,
+                "longitude": 16.8078
+            },
+            {
+                "latitude": 52.3741,
+                "longitude": 16.8117
             }
         ]
     }

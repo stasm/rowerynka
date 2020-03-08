@@ -95,15 +95,13 @@ menu-help =
     ulicy lub miejsca — spróbuję znaleźć pasujący adres.
 
 menu-coverage =
-    Obecnie działam w następujących miastach: Białystok, Chorzów, Częstochowa,
-    Gliwice, Grodzisk Mazowiecki, Kalisz, Katowice, Kędzierzyn-Koźle,
-    Kołobrzeg, Koluszki, Konin, Konstancin Jeziorna, Koszalin, Kutno, Łask,
-    Legnica, Lódź, Łowicz, Lublin, Luboń, Marki, Michałowice, Ostrów
-    Wielkopolski, Pabianice, Piaseczno, Pielgrzymka, Płock, Pobiedziska,
-    Poznań, Pruszków, Pszczyna, Radom, Siemianowice Śląskie, Sieradz,
+    Obecnie działam w następujących miastach: Chorzów, Grodzisk Mazowiecki,
+    Kołobrzeg, Koluszki, Komorniki, Konin, Konstancin Jeziorna, Koszalin,
+    Kutno, Łask, Legnica, Łódź, Łowicz, Lublin, Luboń, Marki, Ostrów
+    Wielkopolski, Pabianice, Piaseczno, Pielgrzymka, Poznań, Sieradz,
     Skierniewice, Sosnowiec, Świdnik, Szamotuły, Szczecin, Tarnów, Tychowo,
-    Tychy, Warszawa, Wrocław, Zabrze, Zduńska Wola, Zgierz, Zielona Góra,
-    Żyrardów.
+    Warszawa, Wrocław, Zduńska Wola, Zgierz, Zielona Góra
+
 `);
 
 const bundle = new fluent.FluentBundle("pl");
