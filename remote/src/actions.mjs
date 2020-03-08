@@ -10,6 +10,7 @@ import _ from "./l10n";
 
 export async function send_text(recipient_id, text) {
     const message = {
+        messaging_type: "RESPONSE",
         recipient: {
             id: recipient_id
         },
@@ -25,6 +26,7 @@ export async function send_text(recipient_id, text) {
 
 export async function send_question(recipient_id, text, quick_replies) {
     const message = {
+        messaging_type: "RESPONSE",
         recipient: {
             id: recipient_id
         },
@@ -64,6 +66,7 @@ export async function send_confirm(recipient_id, text) {
 export async function send_random_gif(recipient_id) {
     const url = await random_gif();
     const message = {
+        messaging_type: "RESPONSE",
         recipient: {
             id: recipient_id
         },
@@ -153,6 +156,7 @@ export async function send_locations(recipient_id, origin) {
     const elements = best_stations.map(station => to_element(origin, station));
 
     const message = {
+        messaging_type: "RESPONSE",
         recipient: {
             id: recipient_id
         },
