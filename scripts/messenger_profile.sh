@@ -11,4 +11,4 @@ if [[ ! $1 ]]; then
 fi
 
 curl -X POST -H "Content-Type: application/json" -d @$1 \
-  "https://graph.facebook.com/v2.6/me/messenger_profile?access_token=${PAGE_ACCESS_TOKEN}"
+  "https://graph.facebook.com/v6.0/me/messenger_profile?access_token=${PAGE_ACCESS_TOKEN}"

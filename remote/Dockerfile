@@ -9,7 +9,7 @@ RUN apk --no-cache add --virtual gyp-deps \
     && npm install \
     && apk del gyp-deps
 
-ENV MESSENGER_API_URL="https://graph.facebook.com/v3.0" \
+ENV MESSENGER_API_URL="https://graph.facebook.com/v6.0" \
     NEXTBIKE_API_URL="https://api.nextbike.net/maps/nextbike-live.xml" \
     MAPS_STATIC_URL="https://maps.googleapis.com/maps/api/staticmap" \
     MAPS_PLACES_URL="https://maps.googleapis.com/maps/api/place" \
