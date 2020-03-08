@@ -1,12 +1,12 @@
 // vim: ts=4 et sts=4 sw=4
 
-import { get_stations } from "./nextbike";
-import { send } from "./messenger";
-import { map_dirs_url } from "./google";
-import { map_image_url } from "./bing";
-import { random_gif } from "./giphy";
-import { distance } from "./util";
-import _ from "./l10n";
+import { get_stations } from "./nextbike.js";
+import { send } from "./messenger.js";
+import { map_dirs_url } from "./google.js";
+import { map_image_url } from "./bing.js";
+import { random_gif } from "./giphy.js";
+import { distance } from "./util.js";
+import _ from "./l10n.js";
 
 export async function send_text(recipient_id, text) {
     const message = {

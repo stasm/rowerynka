@@ -1,11 +1,11 @@
 // vim: ts=4 et sts=4 sw=4
 
-import { get_thread } from "./threads";
-import { del_state } from "./state";
-import { send_text, send_random_gif, send_locations } from "./actions";
-import { random_int } from "./util";
-import patterns from "./patterns";
-import _ from "./l10n";
+import { get_thread } from "./threads.js";
+import { del_state } from "./state.js";
+import { send_text, send_random_gif } from "./actions.js";
+import { random_int } from "./util.js";
+import patterns from "./patterns.js";
+import _ from "./l10n.js";
 
 export async function handle_event(event) {
     const { sender: { id: user_id } } = event;

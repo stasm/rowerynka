@@ -1,4 +1,4 @@
-FROM node:10.11.0-alpine
+FROM node:12.16.1-alpine
 
 COPY . /app/
 WORKDIR /app
@@ -18,4 +18,4 @@ ENV MESSENGER_API_URL="https://graph.facebook.com/v3.0" \
     NODE_ENV="production"
 
 ENTRYPOINT ["node", "--experimental-modules"]
-CMD ["src/index.mjs"]
+CMD ["src/index.js"]

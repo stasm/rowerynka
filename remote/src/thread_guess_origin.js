@@ -1,11 +1,11 @@
 // vim: ts=4 et sts=4 sw=4
 
-import { send_text, send_confirm, send_locations } from "./actions";
-import { get_user_profile } from "./messenger";
-import { place_autocomplete, place_detail } from "./google";
-import { set_state, get_state, del_state } from "./state";
-import patterns from "./patterns";
-import _ from "./l10n";
+import { send_text, send_confirm, send_locations } from "./actions.js";
+import { get_user_profile } from "./messenger.js";
+import { place_autocomplete, place_detail } from "./google.js";
+import { set_state, get_state, del_state } from "./state.js";
+import patterns from "./patterns.js";
+import _ from "./l10n.js";
 
 export async function start(user_id, message) {
     await set_state(user_id, { thread_id: "GUESS_ORIGIN", });
@@ -82,7 +82,7 @@ async function handle_message(user_id, state, message) {
 }
 
 const transitions = {
-    BOT_PREDICTING: async function(user_id, text) {
+    BOT_PREDICTING: async function (user_id, text) {
         const [prediction] = await place_autocomplete(text);
 
         if (!prediction) {
@@ -93,13 +93,13 @@ const transitions = {
         await set_state(user_id, { place_id, description });
         return await goto("USER_RESPOND", user_id, description);
     },
-    USER_RESPOND: async function(user_id, place) {
+    USER_RESPOND: async function (user_id, place) {
         const { gender } = await get_user_profile(user_id);
         return await send_confirm(
             user_id, _("thread-guess-confirm", { gender, place })
         );
     },
-    BOT_SEARCHING: async function(user_id) {
+    BOT_SEARCHING: async function (user_id) {
         const { place_id } = await get_state(user_id);
         const detail = await place_detail(place_id);
 

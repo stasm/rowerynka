@@ -1,6 +1,6 @@
 // vim: ts=4 et sts=4 sw=4
 
-import { get_json, post_json } from "./util";
+import { get_json, post_json } from "./util.js";
 
 const { MESSENGER_API_URL, MESSENGER_PAGE_ACCESS_TOKEN } = process.env;
 

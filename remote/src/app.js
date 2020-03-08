@@ -4,8 +4,8 @@ import body_parser from "body-parser";
 import crypto from "crypto";
 import express from "express";
 
-import { get_state } from "./state";
-import { get_thread } from "./threads";
+import { get_state } from "./state.js";
+import { get_thread } from "./threads.js";
 
 const { MESSENGER_APP_SECRET, MESSENGER_VALIDATION_TOKEN } = process.env;
 

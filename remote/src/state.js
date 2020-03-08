@@ -1,6 +1,6 @@
 // vim: ts=4 et sts=4 sw=4
 
-import { create_client, hmset, hgetall, del } from "./redis";
+import { create_client, hmset, hgetall, del } from "./redis.js";
 
 const client = create_client();
 

@@ -1,6 +1,6 @@
 // vim: ts=4 et sts=4 sw=4
 
-import { get_json } from "./util";
+import { get_json } from "./util.js";
 
 const { GIPHY_API_URL, GIPHY_API_KEY, STATIC_URL } = process.env;
 

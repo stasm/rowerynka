@@ -2,7 +2,7 @@
 
 import {
     read_json, get_xml, distance, bounds, bounds_intersect
-} from "./util";
+} from "./util.js";
 
 const { NEXTBIKE_API_URL } = process.env;
 const distances = new WeakMap();

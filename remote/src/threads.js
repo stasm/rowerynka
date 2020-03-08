@@ -1,7 +1,7 @@
 // vim: ts=4 et sts=4 sw=4
 
-import * as default_thread from "./thread_default";
-import * as guess_origin from "./thread_guess_origin";
+import * as default_thread from "./thread_default.js";
+import * as guess_origin from "./thread_guess_origin.js";
 
 const THREADS = {
     THREAD_DEFAULT: default_thread,

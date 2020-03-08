@@ -2,7 +2,7 @@ version: "3"
 services:
   rowerynka:
     build: ../remote/
-    command: src/index.mjs
+    command: src/index.js
     entrypoint: node --experimental-modules --inspect=0.0.0.0:9222
     env_file:
       - ./development.env
