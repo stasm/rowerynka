@@ -15,7 +15,7 @@
     "express": "4.17.1",
     "geolib": "3.2.1",
     "libxmljs": "0.19.7",
-    "node-fetch": "2.6.0",
+    "node-fetch": "2.6.1",
     "redis": "3.0.2"
   },
   "devDependencies": {
