@@ -16,7 +16,7 @@
     "geolib": "3.2.1",
     "libxmljs": "0.19.7",
     "node-fetch": "2.6.0",
-    "redis": "3.0.2"
+    "redis": "3.1.1"
   },
   "devDependencies": {
     "eslint": "5.6.0"
